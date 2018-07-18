@@ -44,8 +44,6 @@ public class FixedOrderPromotion implements Promotion
 			{					
 				if(currentDate.after(promotion.getStartDate().getTime()) && currentDate.before(promotion.getEndDate().getTime()))
 					result = true;
-				else
-					result = false;
 			}
 		}
 		return result;
