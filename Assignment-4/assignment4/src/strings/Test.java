@@ -28,8 +28,10 @@ public class Test {
 			{
 				case 1: System.out.println("Enter the first string:");
 						string1 = scanner.next();
+						string1 += scanner.nextLine();
 						System.out.println("Enter the second string:");
 						string2 = scanner.next();
+						string2 += scanner.nextLine();
 						int result = stringOperation.compareString(string1,string2);
 						if(result == 1)
 							System.out.println("Equal");
@@ -39,11 +41,13 @@ public class Test {
 						
 				case 2: System.out.println("Enter the string:");
 						string1 = scanner.next();
+						string1 += scanner.nextLine();
 						System.out.println("The reverse is:  "+stringOperation.reverseString(string1));
 						break;
 						
 				case 3: System.out.println("Enter the string:");
 						string1 = scanner.next();
+						string1 += scanner.nextLine();
 						System.out.println("The converted string is:  "+stringOperation.convertString(string1));
 						break;
 						
