@@ -13,12 +13,15 @@ public class JobScheduler {
 	public int getNoOfProcesses() {
 		return noOfProcesses;
 	}
+	
 	public void setNoOfProcesses(int noOfProcesses) {
 		this.noOfProcesses = noOfProcesses;
 	}
+	
 	public int[][] getInputArray() {
 		return inputArray;
 	}
+	
 	public void setInputArray(int[][] inputArray) {
 		this.inputArray = inputArray;
 	}

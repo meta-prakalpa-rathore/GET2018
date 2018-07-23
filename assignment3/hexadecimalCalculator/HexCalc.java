@@ -15,8 +15,8 @@ public class HexCalc implements Calculator {
 	 */
 	public String add(String hexNumber1, String hexNumber2)
 	{
-		int intNumber1 = hexaToDecimal(hexNumber1);
-		int intNumber2 = hexaToDecimal(hexNumber2);
+		int intNumber1 = hexaToDecimal(hexNumber1.toUpperCase());
+		int intNumber2 = hexaToDecimal(hexNumber2.toUpperCase());
 		
 		int intAdd = intNumber1 + intNumber2;
 		
@@ -33,8 +33,8 @@ public class HexCalc implements Calculator {
 	 */
 	public String subtract(String hexNumber1, String hexNumber2)
 	{
-		int intNumber1 = hexaToDecimal(hexNumber1);
-		int intNumber2 = hexaToDecimal(hexNumber2);
+		int intNumber1 = hexaToDecimal(hexNumber1.toUpperCase());
+		int intNumber2 = hexaToDecimal(hexNumber2.toUpperCase());
 		int intSubtract;
 		String hexSubtract;
 		
@@ -61,8 +61,8 @@ public class HexCalc implements Calculator {
 	 */
 	public String multiply(String hexNumber1, String hexNumber2)
 	{
-		int intNumber1 = hexaToDecimal(hexNumber1);
-		int intNumber2 = hexaToDecimal(hexNumber2);
+		int intNumber1 = hexaToDecimal(hexNumber1.toUpperCase());
+		int intNumber2 = hexaToDecimal(hexNumber2.toUpperCase());
 		
 		int intMultiply = intNumber1 * intNumber2;
 		
@@ -80,8 +80,8 @@ public class HexCalc implements Calculator {
 	 */
 	public String divide(String hexNumber1, String hexNumber2)
 	{
-		int intNumber1 = hexaToDecimal(hexNumber1);
-		int intNumber2 = hexaToDecimal(hexNumber2);
+		int intNumber1 = hexaToDecimal(hexNumber1.toUpperCase());
+		int intNumber2 = hexaToDecimal(hexNumber2.toUpperCase());
 		int intDivide = 0;
 		
 		try 
@@ -90,7 +90,7 @@ public class HexCalc implements Calculator {
 		}
 		catch(Exception exception)
 		{
-			System.out.println("Exception caught: Cannot divide by 0");
+			throw new AssertionError("Exception caught: Cannot divide by 0");
 		}
 		
 		String hexDivide = decimalToHexa(intDivide);
@@ -122,8 +122,8 @@ public class HexCalc implements Calculator {
 	{
 		boolean greater = false;
 		String hexDigits = "0123456789ABCDEF";
-		hexNumber1 = removeStartingZeroes(hexNumber1);
-		hexNumber2 = removeStartingZeroes(hexNumber2);
+		hexNumber1 = removeStartingZeroes(hexNumber1.toUpperCase());
+		hexNumber2 = removeStartingZeroes(hexNumber2.toUpperCase());
 		
 		if(hexNumber1.length() > hexNumber2.length())
 		{
@@ -160,14 +160,14 @@ public class HexCalc implements Calculator {
 	 */
 	public boolean lessThan(String hexNumber1, String hexNumber2)
 	{
-		boolean greater = false;
+		boolean small = false;
 		String hexDigits = "0123456789ABCDEF";
-		hexNumber1 = removeStartingZeroes(hexNumber1);
-		hexNumber2 = removeStartingZeroes(hexNumber2);
+		hexNumber1 = removeStartingZeroes(hexNumber1.toUpperCase());
+		hexNumber2 = removeStartingZeroes(hexNumber2.toUpperCase());
 		
 		if(hexNumber1.length() < hexNumber2.length())
 		{
-			greater = true;
+			small = true;
 		}
 		else
 			if(hexNumber1.length() == hexNumber2.length())
@@ -176,7 +176,7 @@ public class HexCalc implements Calculator {
 				{
 					if(hexDigits.indexOf(hexNumber1.charAt(i)) < hexDigits.indexOf(hexNumber2.charAt(i)))
 					{
-						greater = true;
+						small = true;
 						break;
 					}
 					else
@@ -189,7 +189,7 @@ public class HexCalc implements Calculator {
 				}
 			}
 		
-		return greater;		
+		return small;		
 	}
 	
 	
@@ -200,14 +200,15 @@ public class HexCalc implements Calculator {
 	 */
 	public int hexaToDecimal(String hexNumber)
 	{
+	    hexNumber = hexNumber.toUpperCase();
 		int intNumber = 0;
 		int power = 0;
 		String hexDigits = "0123456789ABCDEF";
 		
-		for(int i=hexNumber.length()-1; i>=0; i--)
+		for(int i = hexNumber.length() - 1; i >= 0; i--)
 		{	
 			int valueOfCharacter = hexDigits.indexOf(hexNumber.charAt(i));
-			intNumber = intNumber + valueOfCharacter*(int)Math.pow(16, power);
+			intNumber = intNumber + valueOfCharacter * (int)Math.pow(16, power);
 	  		power++;
 		}
 		
@@ -243,7 +244,7 @@ public class HexCalc implements Calculator {
 	 * @param hexNumber a hexadecimal number
 	 * @return hexadecimal number without insignificant 0's
 	 */
-	public String removeStartingZeroes(String hexNumber)
+	private String removeStartingZeroes(String hexNumber)
 	{
 		String result = "";
 		int i = 0;
