@@ -22,7 +22,7 @@ public class MyString {
 		if(string1.length() == string2.length())
 		{
 			equal = 1;
-			for(int i=0; i<string1.length(); i++)
+			for(int i = 0; i < string1.length(); i++)
 			{
 				if(string1.charAt(i) != string2.charAt(i))
 				{
@@ -45,7 +45,7 @@ public class MyString {
 	{
 		String reverseString = "";
 		
-		for(int i=originalString.length()-1; i>=0; i--)
+		for(int i = originalString.length() - 1; i >= 0; i--)
 		{
 			reverseString += originalString.charAt(i);	
 		}
@@ -63,13 +63,13 @@ public class MyString {
 	{
 		String convertedString = "";
 		
-		for(int i=0; i<originalString.length(); i++)
+		for(int i = 0; i < originalString.length(); i++)
 		{
 			if(originalString.charAt(i) >= 'a' && originalString.charAt(i) <= 'z')
-				convertedString += (char)(originalString.charAt(i)-32);
+				convertedString += (char)(originalString.charAt(i) - 32);
 			else
 				if(originalString.charAt(i) >= 'A' && originalString.charAt(i) <= 'Z')
-					convertedString += (char)(originalString.charAt(i)+32);
+					convertedString += (char)(originalString.charAt(i) + 32);
 				else
 					convertedString += originalString.charAt(i);
 		}
@@ -85,11 +85,11 @@ public class MyString {
 	 */
 	public String largestWord(String string)
 	{
-		String largestWord="";
+		String largestWord = "";
 		
 		for(String word:string.split(" "))
 		{
-			if(word.length() > largestWord.length())
+			if(word.length() >= largestWord.length())
 				largestWord = word;
 		}
 		

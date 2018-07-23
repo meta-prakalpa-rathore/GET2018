@@ -22,9 +22,6 @@ public class Test {
 		for(int i=0; i<noOfStudents; i++)
 			grades[i] = scanner.nextDouble();
 		
-		marksheet.setNoOfStudents(noOfStudents);
-		marksheet.setGrades(grades);
-		
 		do
 		{
 			
@@ -39,20 +36,20 @@ public class Test {
 			
 			switch(choice)
 			{
-				case 1: double average = marksheet.average();
+				case 1: double average = marksheet.average(noOfStudents, grades);
 						System.out.println("Average: " + decimalFormat.format(average));
 						break;
 						
-				case 2: double maximum = marksheet.maxGrade();
+				case 2: double maximum = marksheet.maxGrade(noOfStudents, grades);
 						System.out.println("Maximum grade: " + maximum);
 						break;
 						
-				case 3: double minimum = marksheet.minGrade();
+				case 3: double minimum = marksheet.minGrade(noOfStudents, grades);
 						System.out.println("Minimum grade: " + minimum);
 						break;
 						
-				case 4: double passPercentage = marksheet.studentsPassedPercent();
-						System.out.println("Percentage of students passed: " + passPercentage);
+				case 4: double passPercentage = marksheet.studentsPassedPercent(noOfStudents, grades);
+						System.out.println("Percentage of students passed: " + decimalFormat.format(passPercentage));
 						break;
 						
 				case 5: break;

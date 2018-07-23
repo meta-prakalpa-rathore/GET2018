@@ -8,62 +8,36 @@ package marksheet;
  */
 public class Marksheet {
 
-	int noOfStudents; 
-	double grades[]; 
-	
-	public int getNoOfStudents() {
-		return noOfStudents;
-	}
-	
-	
-	/**
-	 * assigns the total no. of students to noOfStudents variable
-	 * @param noOfStudents takes no. of students as parameter, assumes noOfStudents > 0
-	 */
-	public void setNoOfStudents(int noOfStudents) {
-		this.noOfStudents = noOfStudents;
-	}
-	
-	public double[] getGrades() {
-		return grades;
-	}
-	
-	
-	/**
-	 * assigns the grades of each student to grades[] array
-	 * @param grades array containing grades of each student, assumes grade>=0.00 and grade<=100.00
-	 */
-	public void setGrades(double[] grades) {
-		this.grades = grades;
-	}
-	
-	
 	/**
 	 * calculates the average of the grades of n no. of students
+	 * @param noOfStudents, assumes noOfStudents>0
+	 * @param grades an array of the grades of each student, assumes grade>=0.00 and grade<=100.00
 	 * @return average of grades
 	 */
-	public double average() throws ArithmeticException
+	public double average(int noOfStudents, double[] grades) throws ArithmeticException
 	{
 		double sum = 0;
 		
-		for(int i=0; i<noOfStudents; i++)
+		for(int i = 0; i < noOfStudents; i++)
 			sum += grades[i];
 		
-		return sum/noOfStudents;
+		return sum / noOfStudents;
 	}
 	
 	
 	/**
 	 * calculates the maximum of all grades
+	 * @param noOfStudents, assumes noOfStudents>0
+     * @param grades an array of the grades of each student, assumes grade>=0.00 and grade<=100.00
 	 * @return maximum grade
 	 */
-	public double maxGrade() throws ArithmeticException
+	public double maxGrade(int noOfStudents, double[] grades) throws ArithmeticException
 	{
 		double max = grades[0];
 		
-		for(int i=1; i<noOfStudents; i++)
+		for(int i = 1; i < noOfStudents; i++)
 		{
-			if(grades[i]>max)
+			if(grades[i] > max)
 				max = grades[i];
 		}
 		
@@ -73,15 +47,17 @@ public class Marksheet {
 	
 	/**
 	 * calculates the minimum of all grades
+	 * @param noOfStudents, assumes noOfStudents>0
+     * @param grades an array of the grades of each student, assumes grade>=0.00 and grade<=100.00
 	 * @return minimum grade
 	 */
-	public double minGrade() throws ArithmeticException
+	public double minGrade(int noOfStudents, double[] grades) throws ArithmeticException
 	{
 		double min = grades[0];
 		
-		for(int i=1; i<noOfStudents; i++)
+		for(int i = 1; i < noOfStudents; i++)
 		{
-			if(grades[i]<min)
+			if(grades[i] < min)
 				min = grades[i];
 		}
 		
@@ -91,19 +67,21 @@ public class Marksheet {
 	
 	/**
 	 * calculate the percentage of students passed, student is passed if grade >= 40
+	 * @param noOfStudents, assumes noOfStudents>0
+     * @param grades an array of the grades of each student, assumes grade>=0.00 and grade<=100.00
 	 * @return percentage of students passed
 	 */
-	public double studentsPassedPercent() throws ArithmeticException
+	public double studentsPassedPercent(int noOfStudents, double[] grades) throws ArithmeticException
 	{
 		double pass = 0;
 		
-		for(int i=0; i<noOfStudents; i++)
+		for(int i = 0; i < noOfStudents; i++)
 		{
 			if(grades[i] >= 40)
 				pass++;
 		}
 		
-		return ((pass/noOfStudents)*100);
+		return ((pass / noOfStudents) * 100);
 	}
 	
 }
