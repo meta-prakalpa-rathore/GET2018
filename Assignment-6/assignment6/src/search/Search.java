@@ -36,7 +36,7 @@ public class Search {
 	 * @param leftIndex
 	 * @param rightIndex
 	 * @param valueToSearch
-	 * @return index at which the element is presesnt, -1 if not present
+	 * @return index at which the element is present, -1 if not present
 	 */
 	public int binarySearch(int[] array, int leftIndex, int rightIndex, int valueToSearch)
 	{

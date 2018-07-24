@@ -40,29 +40,30 @@ public class NQueens {
     private boolean canPlaceQueen(int[][] board, int row, int column, int n)
     {
         int i, j;
+        boolean canBePlaced = true; 
         
         //checks if any queen exists in the same column
         for(i = 0; i < row; i++) 
         {
             if(board[i][column] == 1)
-                return false;
+                canBePlaced = false;
         }
         
         //checks if any queen exists in the upper left diagonal
         for (i = row, j = column; i >= 0 && j >= 0; i--, j--)
         {
             if (board[i][j] == 1)
-                return false;
+                canBePlaced = false;
         }
         
         //checks if any queen exists in the upper right diagonal
         for (i = row, j = column; i >= 0 && j < n; i--, j++)
         {
             if (board[i][j] == 1)
-                return false;
+                canBePlaced = false;
         }
                 
-        return true; //queen can be placed at the specified position
+        return canBePlaced; 
     }
     
     
