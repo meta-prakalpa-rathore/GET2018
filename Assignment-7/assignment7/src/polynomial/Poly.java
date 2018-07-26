@@ -136,7 +136,7 @@ public final class Poly {
     public static Poly multiplyPoly(Poly p1, Poly p2)
     {
         int maxDegree = p1.degree() + p2.degree();
-        int[][] multiplication = new int[maxDegree][2];
+        int[][] multiplication = new int[maxDegree + 1][2];
         int term = 0;
         int[][] p1Array = p1.getPolynomial();
         int[][] p2Array = p2.getPolynomial();

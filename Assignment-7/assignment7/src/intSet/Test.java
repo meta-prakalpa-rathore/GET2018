@@ -121,10 +121,10 @@ public class Test {
     
     
     /**
-     * Test case for getComplement()
+     * Test case for union(IntSet s1, IntSet s2)
      */
     @org.junit.Test
-    public void test4() {
+    public void unionTest() {
         IntSet set1 = new IntSet(new int[]{4, 1, 9, 2000, 5});
         IntSet set2 = new IntSet(new int[]{1, 8, 9});
         IntSet union = IntSet.union(set1, set2);

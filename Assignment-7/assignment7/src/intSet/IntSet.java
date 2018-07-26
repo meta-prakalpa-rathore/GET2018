@@ -9,16 +9,6 @@ public final class IntSet {
 
     private final int[] set;
     
-    public int[] getSet() {
-        
-        int[] newSet = new int[size()];
-        
-        for(int i = 0; i < size(); i++)
-            newSet[i] = set[i];
-        
-        return newSet;
-    }
-
     
     /**
      * constructor of the class
@@ -34,23 +24,31 @@ public final class IntSet {
         else
         {
             sort(inputSet);
-            int[] finalInputSet = removeDuplicate(inputSet);
+            int[] finalInputSet = removeUnwanted(inputSet);
+            int i;
             
-            this.set = new int[finalInputSet.length];
-            int term = 0;
+            for(i = 0; i < finalInputSet.length && finalInputSet[i] != 0; i++);
             
-            for(int i = 0; i < finalInputSet.length; i++) 
-            {
-                if(finalInputSet[i] >= 1 && finalInputSet[i] <= 1000)
-                {
-                    this.set[term] = finalInputSet[i];
-                    term++;
-                }
-            }
+            this.set = new int[i];
+            for(int j = 0; j < i; j++)
+                set[j] = finalInputSet[j];
+            
         }
      }
     
     
+    
+    public int[] getSet() {
+        
+        int[] newSet = new int[size()];
+        
+        for(int i = 0; i < size(); i++)
+            newSet[i] = set[i];
+        
+        return newSet;
+    }
+
+        
     /**
      * check whether x is a member of the set 
      * @param x
@@ -84,12 +82,7 @@ public final class IntSet {
      */
     public int size()
     {
-        int i = 0;
-        
-        while(i < set.length && set[i] != 0)
-            i++;
-        
-        return i;
+        return set.length;
     }
     
     
@@ -175,12 +168,16 @@ public final class IntSet {
      * @param array
      * @return array after removing duplicate values
      */
-    private int[] removeDuplicate(int[] array)
+    private int[] removeUnwanted(int[] array)
     {
         int[] newArray = new int[array.length];
         int term = 0;
-                
-        for(int i = 0; i < array.length; i++) 
+        int i = 0;        
+        
+        while(array[i] <= 0)
+            i++;
+        
+        for(; i < array.length && array[i] <= 1000; i++) 
         {
             newArray[term] = array[i];
             
@@ -198,7 +195,7 @@ public final class IntSet {
      * helper method to sort the values in the set
      * @param set
      */
-    public void sort(int[] set)
+    private void sort(int[] set)
     {
         int size = set.length;
         
