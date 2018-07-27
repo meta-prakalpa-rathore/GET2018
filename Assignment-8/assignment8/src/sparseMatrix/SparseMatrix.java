@@ -91,7 +91,7 @@ public class SparseMatrix {
         boolean isSymmetrical = false;
         SparseMatrix transpose = transpose();
         
-        if(sparseMatrix.equals(transpose.getMap()))
+        if(sparseMatrix.equals(transpose.sparseMatrix))
             isSymmetrical = true;
         
         return isSymmetrical;
@@ -170,13 +170,4 @@ public class SparseMatrix {
         return matrix;
     }
     
-    
-    /**
-     * helper method to return the map of the sparse matrix
-     * @return
-     */
-    private Map<Integer, Integer> getMap()
-    {
-        return sparseMatrix;
-    }
 }
