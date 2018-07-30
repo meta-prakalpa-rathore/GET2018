@@ -13,15 +13,28 @@ public class Test {
 		int noOfStudents,choice;
 		DecimalFormat decimalFormat = new DecimalFormat("###.##");
 		
-		try{
 		System.out.println("Please enter the number of students:");
+		//validate input
+        while(!scanner.hasNextInt())
+        {
+            System.out.println("Please enter integer value");
+            scanner.next();
+        }
 		noOfStudents = scanner.nextInt();
 		System.out.println("Please enter the grades of each students (0.00 <= grade <= 100.00)");
 		grades = new double[noOfStudents];
 		
 		for(int i=0; i<noOfStudents; i++)
-			grades[i] = scanner.nextDouble();
-		
+		{
+		    //validate input
+            while(!scanner.hasNextDouble())
+            {
+                System.out.println("Please enter decimal value");
+                scanner.next();
+            }
+            grades[i] = scanner.nextDouble();
+		}
+			
 		do
 		{
 			
@@ -32,6 +45,12 @@ public class Test {
 			System.out.println("4. Calculate percentage of students passed");
 			System.out.println("5. Exit");
 			System.out.println("Enter your choice:");
+			//validate input
+            while(!scanner.hasNextInt())
+            {
+                System.out.println("Please enter integer value");
+                scanner.next();
+            }
 			choice = scanner.nextInt();
 			
 			switch(choice)
@@ -59,12 +78,6 @@ public class Test {
 		}while(choice != 5);
 
 		scanner.close();
-		}
-		catch(InputMismatchException exception)
-		{
-			System.out.println("Wrong input type! Try again!");
-			main(new String[1]);
-		}
 	}
 
 }

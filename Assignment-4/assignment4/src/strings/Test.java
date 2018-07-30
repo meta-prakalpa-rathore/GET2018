@@ -12,7 +12,6 @@ public class Test {
 		int choice;
 		String string1, string2;
 		
-		try{
 		do
 		{
 			System.out.println("\nMENU");
@@ -22,6 +21,12 @@ public class Test {
 			System.out.println("4. Find the largest word in a string");
 			System.out.println("5. Exit");
 			System.out.println("Enter your choice:");
+			//validate input
+            while(!scanner.hasNextInt())
+            {
+                System.out.println("Please enter integer value");
+                scanner.next();
+            }
 			choice = scanner.nextInt();
 			
 			switch(choice)
@@ -65,12 +70,6 @@ public class Test {
 		}while(choice != 5);
 		
 		scanner.close();
-		}
-		catch(InputMismatchException exception)
-		{
-			System.out.println("Wrong input type! Try again!");
-			main(new String[1]);
-		}
 	}
 
 }
