@@ -1,36 +1,22 @@
-package polynomial;
+package mutablePolynomial;
 
 /**
- * immutable class Poly which uses an array to represent single variable polynomial
+ * mutable class Poly which uses an array to represent single variable polynomial
  * @author Prakalpa-Rathore
  *
  */
-public final class Poly {
+public class MutablePoly {
 
-    private final int[][] polynomial;
+    private int[][] polynomial;
     private static final int COEFFICIENT = 0;
     private static final int POWER = 1;
-    
-    public int[][] getPolynomial() {
-
-        int[][] newPolynomial = new int[size()][2];
-        
-        for(int i = 0; i < size(); i++)
-        {
-            newPolynomial[i][COEFFICIENT] = polynomial[i][COEFFICIENT];
-            newPolynomial[i][POWER] = polynomial[i][POWER];
-        }
-        
-        return newPolynomial;
-    }
-    
     
     /**
      * constructor of the class
      * @param inputPolynomial a 2-d array having coefficients and corresponding powers,
      * assumes coefficient will be integer
      */
-    public Poly(int[][] inputPolynomial)
+    public MutablePoly(int[][] inputPolynomial)
     {
         if(inputPolynomial == null || inputPolynomial.length == 0)
             throw new AssertionError("Invalid input");
@@ -55,6 +41,84 @@ public final class Poly {
                 }
             }            
         }
+    }
+    
+    
+    public int[][] getPolynomial() {
+
+        int[][] newPolynomial = new int[size()][2];
+        
+        for(int i = 0; i < size(); i++)
+        {
+            newPolynomial[i][COEFFICIENT] = polynomial[i][COEFFICIENT];
+            newPolynomial[i][POWER] = polynomial[i][POWER];
+        }
+        
+        return newPolynomial;
+    } 
+    
+    
+    /**
+     * method to add a term in the polynomial
+     * @param coefficient
+     * @param power
+     */
+    public void addTerm(int coefficient, int power)
+    {
+        int duplicateTerm = checkPower(polynomial, power);
+        
+        if(duplicateTerm != -1)
+        {
+            polynomial[duplicateTerm][COEFFICIENT] += coefficient;
+        }
+        else
+        {
+            if(coefficient != 0)
+            {
+                int[][] newPolynomial = new int[polynomial.length + 1][2];
+                int i;
+                
+                for(i = 0; i < polynomial.length; i++)
+                {
+                   newPolynomial[i][COEFFICIENT] = polynomial[i][COEFFICIENT];
+                   newPolynomial[i][POWER] = polynomial[i][POWER];
+                }
+                
+                polynomial = newPolynomial;
+                this.polynomial[i][COEFFICIENT] = coefficient;
+                this.polynomial[i][POWER] = power;
+            }
+        }            
+    }
+    
+    
+    /**
+     * method to remove a term from the polynomial, throws assertion error if term is not present in the polynomial
+     * @param power
+     */
+    public void removeTerm(int power)
+    {
+        int index = checkPower(polynomial, power);
+        
+        if(index != -1)
+        {
+            int[][] newPolynomial = new int[polynomial.length - 1][2];
+            int i = 0;
+            
+            for(int j = 0; j < polynomial.length; j++)
+            {
+                if(j != index)
+                {
+                    newPolynomial[i][COEFFICIENT] = polynomial[j][COEFFICIENT];
+                    newPolynomial[i][POWER] = polynomial[j][POWER];
+                    i++;
+                }
+            }
+            
+            polynomial = newPolynomial;
+        }
+        else
+            throw new AssertionError("Term not found!");
     }
     
     
@@ -103,7 +167,7 @@ public final class Poly {
      * @param p2
      * @return the resulting polynomial after addition
      */
-    public static Poly addPoly(Poly p1, Poly p2)
+    public static MutablePoly addPoly(MutablePoly p1, MutablePoly p2)
     {
         int maxDegree = (p1.degree() > p2.degree()) ? p1.degree() : p2.degree();
         int[][] addition = new int[maxDegree + 1][2];
@@ -123,7 +187,7 @@ public final class Poly {
                 
         }
         
-        return new Poly(addition);
+        return new MutablePoly(addition);
     }
     
     
@@ -133,7 +197,7 @@ public final class Poly {
      * @param p2
      * @return the resulting polynomial after multiplication
      */
-    public static Poly multiplyPoly(Poly p1, Poly p2)
+    public static MutablePoly multiplyPoly(MutablePoly p1, MutablePoly p2)
     {
         int maxDegree = p1.degree() + p2.degree();
         int[][] multiplication = new int[maxDegree + 1][2];
@@ -161,7 +225,7 @@ public final class Poly {
             }
         }
         
-        return new Poly(multiplication);
+        return new MutablePoly(multiplication);
         
     }
     

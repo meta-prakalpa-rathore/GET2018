@@ -23,6 +23,12 @@ public class MainClass {
             switch(choice)
             {
                 case 1: System.out.println("Enter the no. of terms in polynomial:");
+                        //validate input
+                        while(!sc.hasNextInt())
+                        {
+                            System.out.println("Please enter integer value");
+                            sc.next();
+                        }
                         int n = sc.nextInt();
                         System.out.println("Enter the polynomial");
                         int[][] array = new int[n][2];
@@ -30,19 +36,43 @@ public class MainClass {
                         for(int i = 0; i < n; i++)
                         {
                             System.out.println("Coefficient:");
+                            //validate input
+                            while(!sc.hasNextInt())
+                            {
+                                System.out.println("Please enter integer value");
+                                sc.next();
+                            }
                             array[i][0] = sc.nextInt();
                             
                             System.out.println("Power:");
+                            //validate input
+                            while(!sc.hasNextInt())
+                            {
+                                System.out.println("Please enter integer value");
+                                sc.next();
+                            }
                             array[i][1] = sc.nextInt();
                         }
                         
                         Poly polynomial = new Poly(array);
                         System.out.println("Enter the value of variable x:");
+                        //validate input
+                        while(!sc.hasNextFloat())
+                        {
+                            System.out.println("Please enter integer value");
+                            sc.next();
+                        }
                         float x = sc.nextFloat();
                         System.out.println("The result after evaluation is: " + polynomial.evaluate(x));
                         break;
                         
                 case 2: System.out.println("Enter the no. of terms in polynomial:");
+                        //validate input
+                        while(!sc.hasNextInt())
+                        {
+                            System.out.println("Please enter integer value");
+                            sc.next();
+                        }
                         n = sc.nextInt();
                         System.out.println("Enter the polynomial");
                         int[][] array1 = new int[n][2];
@@ -50,9 +80,21 @@ public class MainClass {
                         for(int i = 0; i < n; i++)
                         {
                             System.out.println("Coefficient:");
+                            //validate input
+                            while(!sc.hasNextInt())
+                            {
+                                System.out.println("Please enter integer value");
+                                sc.next();
+                            }
                             array1[i][0] = sc.nextInt();
                     
                             System.out.println("Power:");
+                            //validate input
+                            while(!sc.hasNextInt())
+                            {
+                                System.out.println("Please enter integer value");
+                                sc.next();
+                            }
                             array1[i][1] = sc.nextInt();
                         }
                         
@@ -61,6 +103,12 @@ public class MainClass {
                         break;
                         
                 case 3: System.out.println("Enter the no. of terms in the first polynomial:");
+                        //validate input
+                        while(!sc.hasNextInt())
+                        {
+                            System.out.println("Please enter integer value");
+                            sc.next();
+                        }
                         int n1 = sc.nextInt();
                         System.out.println("Enter the first polynomial");
                         int[][] firstArray = new int[n1][2];
@@ -68,15 +116,33 @@ public class MainClass {
                         for(int i = 0; i < n1; i++)
                         {
                             System.out.println("Coefficient:");
+                            //validate input
+                            while(!sc.hasNextInt())
+                            {
+                                System.out.println("Please enter integer value");
+                                sc.next();
+                            }
                             firstArray[i][0] = sc.nextInt();
             
                             System.out.println("Power:");
+                            //validate input
+                            while(!sc.hasNextInt())
+                            {
+                                System.out.println("Please enter integer value");
+                                sc.next();
+                            }
                             firstArray[i][1] = sc.nextInt();
                         }
                         
                         Poly firstPolynomial = new Poly(firstArray);
                         
                         System.out.println("Enter the no. of terms in the second polynomial:");
+                        //validate input
+                        while(!sc.hasNextInt())
+                        {
+                            System.out.println("Please enter integer value");
+                            sc.next();
+                        }
                         int n2 = sc.nextInt();
                         System.out.println("Enter the second polynomial");
                         int[][] secondArray = new int[n2][2];
@@ -84,9 +150,21 @@ public class MainClass {
                         for(int i = 0; i < n2; i++)
                         {
                             System.out.println("Coefficient:");
+                            //validate input
+                            while(!sc.hasNextInt())
+                            {
+                                System.out.println("Please enter integer value");
+                                sc.next();
+                            }
                             secondArray[i][0] = sc.nextInt();
             
                             System.out.println("Power:");
+                            //validate input
+                            while(!sc.hasNextInt())
+                            {
+                                System.out.println("Please enter integer value");
+                                sc.next();
+                            }
                             secondArray[i][1] = sc.nextInt();
                         }
                         
@@ -106,6 +184,12 @@ public class MainClass {
                         break;
                         
                 case 4: System.out.println("Enter the no. of terms in the first polynomial:");
+                        //validate input
+                        while(!sc.hasNextInt())
+                        {
+                            System.out.println("Please enter integer value");
+                            sc.next();
+                        }
                         n1 = sc.nextInt();
                         System.out.println("Enter the first polynomial");
                         int[][] firstPolyArray = new int[n1][2];
@@ -113,15 +197,33 @@ public class MainClass {
                         for(int i = 0; i < n1; i++)
                         {
                             System.out.println("Coefficient:");
+                            //validate input
+                            while(!sc.hasNextInt())
+                            {
+                                System.out.println("Please enter integer value");
+                                sc.next();
+                            }
                             firstPolyArray[i][0] = sc.nextInt();
     
                             System.out.println("Power:");
+                            //validate input
+                            while(!sc.hasNextInt())
+                            {
+                                System.out.println("Please enter integer value");
+                                sc.next();
+                            }
                             firstPolyArray[i][1] = sc.nextInt();
                         }
                         
                         Poly firstPoly = new Poly(firstPolyArray);
                 
                         System.out.println("Enter the no. of terms in the second polynomial:");
+                        //validate input
+                        while(!sc.hasNextInt())
+                        {
+                            System.out.println("Please enter integer value");
+                            sc.next();
+                        }
                         n2 = sc.nextInt();
                         System.out.println("Enter the second polynomial");
                         int[][] secondPolyArray = new int[n2][2];
@@ -129,9 +231,21 @@ public class MainClass {
                         for(int i = 0; i < n2; i++)
                         {
                             System.out.println("Coefficient:");
+                            //validate input
+                            while(!sc.hasNextInt())
+                            {
+                                System.out.println("Please enter integer value");
+                                sc.next();
+                            }
                             secondPolyArray[i][0] = sc.nextInt();
     
                             System.out.println("Power:");
+                            //validate input
+                            while(!sc.hasNextInt())
+                            {
+                                System.out.println("Please enter integer value");
+                                sc.next();
+                            }
                             secondPolyArray[i][1] = sc.nextInt();
                         }
                         
@@ -155,6 +269,8 @@ public class MainClass {
                 default: System.out.println("Wrong choice!! Please select correct option");
             }
         }while(choice!=5);
+        
+        sc.close();
 
     }
 

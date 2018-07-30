@@ -47,7 +47,7 @@ public class Test {
      * Test case for degree()
      */
     @org.junit.Test
-    public void test1() {
+    public void degreeTest() {
         
         Poly polynomial = new Poly(new int[][]{{2, 2}, {3, 1}, {2, 0}});
         int result = polynomial.degree();
@@ -59,7 +59,7 @@ public class Test {
      * Test case for addPoly(Poly p1, Poly p2)
      */
     @org.junit.Test
-    public void test2() {
+    public void addPolyTest() {
         
         Poly polynomial1 = new Poly(new int[][]{{2, 2}, {3, 1}, {2, 0}});
         Poly polynomial2 = new Poly(new int[][]{{4, 3}, {3, 1}});
@@ -79,7 +79,7 @@ public class Test {
      * Test case for multiplyPoly(Poly p1, Poly p2)
      */
     @org.junit.Test
-    public void test3() {
+    public void multiplyPolyTest() {
         
         Poly polynomial1 = new Poly(new int[][]{{2, 2}, {3, 1}, {2, 0}});
         Poly polynomial2 = new Poly(new int[][]{{4, 3}, {3, 1}});
