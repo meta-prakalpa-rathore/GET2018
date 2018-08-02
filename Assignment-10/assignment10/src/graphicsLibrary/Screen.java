@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class Screen {
 
-    List<Shape> screenObjects = new ArrayList<Shape>();
+    List<Shape> listOfShapesOnScreen = new ArrayList<Shape>();
     double xMax, yMax; // used to determine the size of the screen
     
     //constructor of class
@@ -39,7 +39,7 @@ public class Screen {
             if(shapeOrigin.getX() < 0 || shapeOrigin.getX() > xMax || shapeOrigin.getY() < 0 || shapeOrigin.getY() > yMax)
                 throw new AssertionError("Object lies outside the screen!");
         
-            screenObjects.add(shapeObject);
+            listOfShapesOnScreen.add(shapeObject);
             shapeObject.setTimestamp(new Date());
         
             return true;
@@ -60,8 +60,8 @@ public class Screen {
     {
         try
         {
-            if(screenObjects.contains(shapeObject))
-                screenObjects.remove(shapeObject);
+            if(listOfShapesOnScreen.contains(shapeObject))
+                listOfShapesOnScreen.remove(shapeObject);
             else
                 throw new AssertionError("The given shape object is not present on screen!");
             
@@ -85,7 +85,7 @@ public class Screen {
         boolean flag = false;
         List<Shape> removeList = new ArrayList<Shape>();
         
-        for(Shape shape: screenObjects)
+        for(Shape shape: listOfShapesOnScreen)
         {
             if(shape.getShapeType() == shapeType)
             {
@@ -96,7 +96,7 @@ public class Screen {
         
         for(Shape shape: removeList)
         {
-            screenObjects.remove(shape);
+            listOfShapesOnScreen.remove(shape);
         }
         
         try
@@ -119,8 +119,8 @@ public class Screen {
      */
     public List<Shape> sortByArea()
     {
-        List<Shape> sortedListByArea = new ArrayList<Shape>(screenObjects);
-        int noOfObjects = screenObjects.size();
+        List<Shape> sortedListByArea = new ArrayList<Shape>(listOfShapesOnScreen);
+        int noOfObjects = listOfShapesOnScreen.size();
         
         if(noOfObjects == 0)
             throw new AssertionError("List is empty! Cannot sort");
@@ -147,8 +147,8 @@ public class Screen {
      */
     public List<Shape> sortByPerimeter()
     {
-        List<Shape> sortedListByPerimeter = new ArrayList<Shape>(screenObjects);
-        int noOfObjects = screenObjects.size();
+        List<Shape> sortedListByPerimeter = new ArrayList<Shape>(listOfShapesOnScreen);
+        int noOfObjects = listOfShapesOnScreen.size();
         
         if(noOfObjects == 0)
             throw new AssertionError("List is empty! Cannot sort");
@@ -175,8 +175,8 @@ public class Screen {
      */
     public List<Shape> sortByOriginDistance()
     {
-        List<Shape> sortedListByOriginDistance = new ArrayList<Shape>(screenObjects);
-        int noOfObjects = screenObjects.size();
+        List<Shape> sortedListByOriginDistance = new ArrayList<Shape>(listOfShapesOnScreen);
+        int noOfObjects = listOfShapesOnScreen.size();
         
         if(noOfObjects == 0)
             throw new AssertionError("List is empty! Cannot sort");
@@ -203,9 +203,9 @@ public class Screen {
      */
     public List<Shape> sortByTimestamp()
     {
-        if(screenObjects.size() == 0)
+        if(listOfShapesOnScreen.size() == 0)
             throw new AssertionError("List is empty! Cannot sort");
-        return screenObjects;
+        return listOfShapesOnScreen;
     }
     
     
@@ -221,7 +221,7 @@ public class Screen {
         if(point == null)
             throw new AssertionError("Enter a valid point");
         
-        for(Shape shape: screenObjects)
+        for(Shape shape: listOfShapesOnScreen)
         {
             if(shape.isPointEnclosed(point))
                 listOfShapes.add(shape);

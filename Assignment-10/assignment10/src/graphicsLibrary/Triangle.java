@@ -45,15 +45,13 @@ public class Triangle implements Shape {
 
     
     /**
-     * calculates the area of the triangle
+     * calculates the area of the triangle, assumes firstSide to be the base
      * @return area
      */
     @Override
     public double getArea() {
         
-        double halfPerimeter = (firstSide + secondSide + thirdSide) / 2;
-        double area = Math.sqrt(halfPerimeter * (halfPerimeter - firstSide) * (halfPerimeter - secondSide) * (halfPerimeter - thirdSide));
-        return area;
+        return 0.5 * firstSide * height;
     }
 
     
