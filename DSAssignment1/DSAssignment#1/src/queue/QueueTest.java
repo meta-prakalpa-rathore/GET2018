@@ -6,46 +6,46 @@ import org.junit.Test;
 public class QueueTest {
 
 	/**
-	 * test case to enQueue a value in queue (return true when element is enQueueed and returns false when queue is full)
+	 * test case to enqueue a value in queue (return true when element is enqueueed and returns false when queue is full)
 	 */
 	@Test
-	public void queueArrayenQueueTest() {
+	public void queueArrayenqueueTest() {
 		
 		QueueArray<Integer> queue = new QueueArray<>(5);
-		assertTrue(queue.enQueue(1));
-		assertTrue(queue.enQueue(2));
-		assertTrue(queue.enQueue(3));
-		assertTrue(queue.enQueue(4));
-		assertTrue(queue.enQueue(5));
-		assertFalse(queue.enQueue(6));
+		assertTrue(queue.enqueue(1));
+		assertTrue(queue.enqueue(2));
+		assertTrue(queue.enqueue(3));
+		assertTrue(queue.enqueue(4));
+		assertTrue(queue.enqueue(5));
+		assertFalse(queue.enqueue(6));
 	}
 	
 	
 	/**
-	 * test case to deQueue a value from the queue
+	 * test case to dequeue a value from the queue
 	 */
 	@Test
-	public void queueArraydeQueueTest1() {
+	public void queueArraydequeueTest1() {
 		
 		QueueArray<Integer> queue = new QueueArray<>(5);
-		queue.enQueue(1);
-		queue.enQueue(2);
-		queue.enQueue(3);
-		int deQueuedValue = queue.deQueue();
-		assertEquals(1, deQueuedValue);
+		queue.enqueue(1);
+		queue.enqueue(2);
+		queue.enqueue(3);
+		int dequeuedValue = queue.dequeue();
+		assertEquals(1, dequeuedValue);
 	}
 	
 	
 	/**
-	 * test case to deQueue a value from the queue when it is empty
+	 * test case to dequeue a value from the queue when it is empty
 	 */
 	@Test(expected = AssertionError.class)
-	public void queueArraydeQueueTest2() {
+	public void queueArraydequeueTest2() {
 		
 		QueueArray<String> queue = new QueueArray<>(5);
-		queue.enQueue("hello");
-		queue.deQueue();
-		queue.deQueue();
+		queue.enqueue("hello");
+		queue.dequeue();
+		queue.dequeue();
 	}
 	
 	
@@ -56,7 +56,7 @@ public class QueueTest {
 	public void queueArrayIsEmptyTest1() {
 		
 		QueueArray<Integer> queue = new QueueArray<>(5);
-		queue.enQueue(2);
+		queue.enqueue(2);
 		assertFalse(queue.isEmpty());
 	}
 	
@@ -80,11 +80,11 @@ public class QueueTest {
 	public void queueArrayIsFullTest1() {
 		
 		QueueArray<Integer> queue = new QueueArray<>(5);
-		queue.enQueue(2);
-		queue.enQueue(2);
-		queue.enQueue(2);
-		queue.enQueue(2);
-		queue.enQueue(2);
+		queue.enqueue(2);
+		queue.enqueue(2);
+		queue.enqueue(2);
+		queue.enqueue(2);
+		queue.enqueue(2);
 		assertTrue(queue.isFull());
 	}
 	
@@ -98,50 +98,50 @@ public class QueueTest {
 		QueueArray<Integer> queue = new QueueArray<>(5);
 		assertFalse(queue.isFull());
 		
-		queue.enQueue(3);
+		queue.enqueue(3);
 		assertFalse(queue.isFull());
 	}
 
 	
 	/**
-	 * test case to enQueue a value in queue
+	 * test case to enqueue a value in queue
 	 */
 	@Test
-	public void queueLinkedListenQueueTest() {
+	public void queueLinkedListenqueueTest() {
 		
 		QueueLinkedList<Integer> queue = new QueueLinkedList<>();
-		assertTrue(queue.enQueue(1));
-		assertTrue(queue.enQueue(2));
-		assertTrue(queue.enQueue(3));
+		assertTrue(queue.enqueue(1));
+		assertTrue(queue.enqueue(2));
+		assertTrue(queue.enqueue(3));
 	}
 		
 	
 	/**
-	 * test case to deQueue a value from the queue
+	 * test case to dequeue a value from the queue
 	 */
 	@Test
-	public void queueLinkedListdeQueueTest1() {
+	public void queueLinkedListdequeueTest1() {
 		
 		QueueLinkedList<Integer> queue = new QueueLinkedList<>();
-		queue.enQueue(1);
-		queue.enQueue(2);
-		queue.enQueue(3);
-		queue.enQueue(4);
-		int deQueuedValue = queue.deQueue();
-		assertEquals(1, deQueuedValue);
+		queue.enqueue(1);
+		queue.enqueue(2);
+		queue.enqueue(3);
+		queue.enqueue(4);
+		int dequeuedValue = queue.dequeue();
+		assertEquals(1, dequeuedValue);
 	}
 
 	
 	/**
-	 * test case to deQueue a value from the queue when it is empty
+	 * test case to dequeue a value from the queue when it is empty
 	 */
 	@Test(expected = AssertionError.class)
-	public void queueLinkedListdeQueueTest2() {
+	public void queueLinkedListdequeueTest2() {
 		
 		QueueLinkedList<Double> queue = new QueueLinkedList<>();
-		queue.enQueue(2.4);
-		queue.deQueue();
-		queue.deQueue();
+		queue.enqueue(2.4);
+		queue.dequeue();
+		queue.dequeue();
 	}	
 	
 	
@@ -152,7 +152,7 @@ public class QueueTest {
 	public void queueLinkedListIsEmptyTest1() {
 		
 		QueueLinkedList<Integer> queue = new QueueLinkedList<>();
-		queue.enQueue(2);
+		queue.enqueue(2);
 		assertFalse(queue.isEmpty());
 	}
 	
@@ -176,12 +176,12 @@ public class QueueTest {
 	public void queueLinkedListIsFullTest() {
 		
 		QueueLinkedList<Integer> queue = new QueueLinkedList<>();
-		queue.enQueue(2);
+		queue.enqueue(2);
 		assertFalse(queue.isFull());
 		
-		queue.enQueue(2);
-		queue.enQueue(2);
-		queue.enQueue(2);
+		queue.enqueue(2);
+		queue.enqueue(2);
+		queue.enqueue(2);
 		assertFalse(queue.isFull());
 	}
 

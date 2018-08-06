@@ -22,7 +22,7 @@ public class QueueLinkedList<E> implements Queue<E> {
      */
 
     @Override
-    public boolean enQueue(E value) {
+    public boolean enqueue(E value) {
         
         if(rear == null)
         {
@@ -47,7 +47,7 @@ public class QueueLinkedList<E> implements Queue<E> {
      * @return value that is removed, and throws an AssertionError if queue is empty
      */
     @Override
-    public E deQueue() {
+    public E dequeue() {
         
         E val;
         
