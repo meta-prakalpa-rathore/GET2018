@@ -14,14 +14,14 @@ public interface Queue<E> {
      * @param value
      * @return true if element is added to the queue, false otherwise
      */
-    public boolean add(E value);
+    public boolean enQueue(E value);
     
     
     /**
      * method to remove a value from the front of the queue
      * @return value that is removed
      */
-    public E delete();
+    public E deQueue();
     
     
     /**

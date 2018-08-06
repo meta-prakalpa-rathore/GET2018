@@ -41,11 +41,11 @@ public class StackLinkedList<E> implements Stack<E> {
      */
 	public E pop() throws AssertionError
 	{
-	    E val;
+	    E value;
 	    
 		if(!isEmpty())
 		{
-		    val = top.getValue();
+		    value = top.getValue();
 	        Node<E> popNode=top;
 	        top=popNode.getLink();
 	        popNode.setLink(null);
@@ -53,7 +53,7 @@ public class StackLinkedList<E> implements Stack<E> {
 		else
 		    throw new AssertionError("The stack is empty!");
 		
-		return val;
+		return value;
 	}
 	
 	

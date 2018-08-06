@@ -2,10 +2,10 @@ package node;
 
 
 /**
- * this generic class is used to create a node for the linked list
+ * this generic class is used to store a value and a link is used to reference another object of same class
  * @author Prakalpa-Rathore
  *
- * @param <E> defines the type of value to be stored in the list
+ * @param <E> defines the type of value to be stored 
  */
 public class Node<E> {
     

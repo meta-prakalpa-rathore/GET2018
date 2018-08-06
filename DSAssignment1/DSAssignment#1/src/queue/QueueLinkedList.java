@@ -11,8 +11,8 @@ import node.Node;
  */
 public class QueueLinkedList<E> implements Queue<E> {
 
-    private Node<E> front = null;
-    private Node<E> rear = null;  
+    private Node<E> rear = null;
+    private Node<E> front = null;  
     
     
     /**
@@ -22,20 +22,20 @@ public class QueueLinkedList<E> implements Queue<E> {
      */
 
     @Override
-    public boolean add(E value) {
+    public boolean enQueue(E value) {
         
-        if(front == null)
+        if(rear == null)
         {
-            front = new Node<E>(value);
-            front.setLink(null);
-            rear = front;
+            rear = new Node<E>(value);
+            rear.setLink(null);
+            front = rear;
         }
         else
         {
             Node<E> newNode = new Node<E>(value);
-            front.setLink(newNode);
+            rear.setLink(newNode);
             newNode.setLink(null);
-            front = newNode;
+            rear = newNode;
         }
         
         return true;
@@ -47,23 +47,23 @@ public class QueueLinkedList<E> implements Queue<E> {
      * @return value that is removed, and throws an AssertionError if queue is empty
      */
     @Override
-    public E delete() {
+    public E deQueue() {
         
         E val;
         
         if(!isEmpty())
         {
-            if(rear == front)
+            if(front == rear)
             {
-                val = rear.getValue();
-                rear = null;
+                val = front.getValue();
                 front = null;
+                rear = null;
             }
             else
             {
-                val = rear.getValue();
-                Node<E> popNode = rear;
-                rear = popNode.getLink();
+                val = front.getValue();
+                Node<E> popNode = front;
+                front = popNode.getLink();
                 popNode.setLink(null);
             }
         }
@@ -81,7 +81,7 @@ public class QueueLinkedList<E> implements Queue<E> {
     @Override
     public boolean isEmpty() {
         
-        return front == null;
+        return rear == null;
     }
 
     

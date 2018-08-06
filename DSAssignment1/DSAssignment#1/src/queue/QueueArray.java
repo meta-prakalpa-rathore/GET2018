@@ -28,7 +28,7 @@ public class QueueArray<E> implements Queue<E>{
      * @return true if element is added to the queue, false otherwise
      */
     @Override
-    public boolean add(E value) {
+    public boolean enQueue(E value) {
         
     	try
     	{
@@ -54,7 +54,7 @@ public class QueueArray<E> implements Queue<E>{
      * @return value that is removed, and throws an AssertionError if queue is empty
      */
     @Override
-    public E delete() throws AssertionError
+    public E deQueue() throws AssertionError
     {        
         E value = null;
         
