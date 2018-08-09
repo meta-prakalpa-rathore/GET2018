@@ -58,4 +58,39 @@ public class CricketMatchTest {
 		
 		new CricketMatch(40, bowlerMap);
 	}
+	
+	
+	/**
+     * test case when no of balls that virat would play is negative
+     */
+    @Test(expected = AssertionError.class)
+    public void cricketMatchTest4() {
+        
+        new CricketMatch(-20, bowlerMap);
+    }
+    
+    
+    /**
+     * test case when no of balls that virat would play is 0
+     */
+    @Test(expected = AssertionError.class)
+    public void cricketMatchTest5() {
+        
+        new CricketMatch(0, bowlerMap);
+    }
+    
+    
+    /**
+     * test case when no of balls to be bowled by a bowler is negative
+     */
+    @Test(expected = AssertionError.class)
+    public void cricketMatchTest6() {
+        
+        Map<String, Integer> newBowlerMap = new LinkedHashMap<String, Integer>();
+        
+        newBowlerMap.put("deekshika", 7);
+        newBowlerMap.put("prakalpa", 9);
+        newBowlerMap.put("arjita", -2);
+        new CricketMatch(10, newBowlerMap);
+    }
 }

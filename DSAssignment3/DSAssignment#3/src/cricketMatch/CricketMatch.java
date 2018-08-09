@@ -16,11 +16,20 @@ public class CricketMatch {
 	int noOfBallsViratPlay, totalNoOfBowlers;
 	
 	//constructor
-	public CricketMatch(int totalNoOfballs, Map<String, Integer> bowlerMap)
+	public CricketMatch(int noOfBallsViratPlay, Map<String, Integer> bowlerMap) throws AssertionError
 	{
-		if(sum(bowlerMap) >= totalNoOfballs) 
+	    if(noOfBallsViratPlay <= 0)
+	        throw new AssertionError("Number of balls should be more than zero");
+	    
+	    for(String bowler: bowlerMap.keySet())
+	    {
+	        if(bowlerMap.get(bowler) < 0)
+	            throw new AssertionError("Number of balls cannot be negative");
+	    }
+	    
+		if(sum(bowlerMap) >= noOfBallsViratPlay) 
 		{
-			this.noOfBallsViratPlay = totalNoOfballs; 
+			this.noOfBallsViratPlay = noOfBallsViratPlay; 
 			this.bowlerMap = bowlerMap;
 			this.totalNoOfBowlers = bowlerMap.size();
 		}

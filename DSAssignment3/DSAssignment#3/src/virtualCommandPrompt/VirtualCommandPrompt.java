@@ -59,6 +59,7 @@ public class VirtualCommandPrompt {
 							}
 							else
 								System.out.println(signature + ">The syntax of the command is incorrect.");
+			
 							System.out.print(signature + ">");
 							break;
 						
@@ -87,6 +88,7 @@ public class VirtualCommandPrompt {
 							}
 							else
 								System.out.println(signature + ">The syntax of the command is incorrect.");
+			
 							System.out.print(signature + ">");
 							break;
 			
@@ -121,16 +123,22 @@ public class VirtualCommandPrompt {
 							
 							
 			//command to find the path of an existing directory				
-			case "find"   : path = ".\\";
-							String directoryPath = findPath(currentDirectory, commandWords[1]);
-							if(directoryPath != null)
-							{
-								StringBuilder pathToFind = new StringBuilder(directoryPath);
-								pathToFind.deleteCharAt(pathToFind.length() - 1);
-								System.out.println(pathToFind);
-							}
-							else
-								System.out.println(signature + ">Directory not found");
+			case "find"   : if(commandWords.length >= 2)
+			                {
+    			                path = ".\\";
+    							String directoryPath = findPath(currentDirectory, commandWords[1]);
+    							if(directoryPath != null)
+    							{
+    								StringBuilder pathToFind = new StringBuilder(directoryPath);
+    								pathToFind.deleteCharAt(pathToFind.length() - 1);
+    								System.out.println(pathToFind);
+    							}
+    							else
+    								System.out.println(signature + ">Directory not found");
+			                }
+			                else
+			                    System.out.println(signature + ">The syntax of the command is incorrect.");
+			
 							System.out.print(signature + ">");
 							break;
 			

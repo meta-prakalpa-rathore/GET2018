@@ -12,7 +12,7 @@ public class PriorityQueueTest {
      * test case to enqueue a value in queue (return true when element is enqueued and returns false when queue is full)
      */
     @Test
-    public void PriorityQueueenqueueTest() {
+    public void PriorityQueueEnqueueTest() {
         
         PriorityQueue queue = new PriorityQueueArray(5);
         assertTrue(queue.enqueue(new Job(1, 2)));
@@ -28,7 +28,7 @@ public class PriorityQueueTest {
      * test case to dequeue a value from the queue
      */
     @Test
-    public void PriorityQueuedequeueTest1() {
+    public void PriorityQueueDequeueTest1() {
         
         PriorityQueue queue = new PriorityQueueArray(5);
         queue.enqueue(new Job(2, 2));
@@ -42,7 +42,7 @@ public class PriorityQueueTest {
      * test case to dequeue a value from the queue when it is empty
      */
     @Test(expected = AssertionError.class)
-    public void PriorityQueuedequeueTest2() {
+    public void PriorityQueueDequeueTest2() {
         
         PriorityQueue queue = new PriorityQueueArray(5);
         queue.enqueue(new Job(2, 2));
