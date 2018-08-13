@@ -95,6 +95,16 @@ public class DictionaryTest {
         for(int i = 0; i < sortedList.size(); i++)
             assertEquals(expectedList.get(i).getKey(), sortedList.get(i).getKey());
         
+        
+        dictionary.deleteEntry("good"); 
+        dictionary.deleteEntry("hire");
+        
+        sortedList = dictionary.getSortedList();  //sorted list after deleting some of the entries
+        expectedList.remove(1);
+        expectedList.remove(2);
+        
+        for(int i = 0; i < sortedList.size(); i++) 
+            assertEquals(expectedList.get(i).getKey(), sortedList.get(i).getKey());
     }
     
     
