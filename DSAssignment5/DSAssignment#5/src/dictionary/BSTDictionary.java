@@ -177,7 +177,7 @@ public class BSTDictionary implements Dictionary
             while(iterator.hasNext())
             {
                 DictionaryEntry entry = iterator.next();
-                if(key1.compareTo(entry.getKey()) < 0 && key2.compareTo(entry.getKey()) > 0)
+                if(key1.compareTo(entry.getKey()) <= 0 && key2.compareTo(entry.getKey()) >= 0)
                 {
                     sortedSubList.add(entry);
                 }
