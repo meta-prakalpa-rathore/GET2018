@@ -82,13 +82,7 @@ public class BSTDictionary implements Dictionary
     public boolean deleteEntry(String key)
     {        
         try
-        {           
-            if(key == null)
-                throw new AssertionError("Invalid input");
-            
-            if (isEmpty())
-                throw new AssertionError("The dictionary is empty! Cannot delete");
-            
+        {    
             if (getValue(key) == null)
                 throw new AssertionError("The given key is not present in the dictionary");
             
