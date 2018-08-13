@@ -113,13 +113,28 @@ public class BSTDictionary implements Dictionary
     {        
         try
         {
+            BSTNode newRoot = root;
+            String value = null;
+            
             if(key == null)
                 throw new AssertionError("Invalid input");
             
             if (isEmpty())
                 throw new AssertionError("The dictionary is empty!");
             
-            String value = getValue(root, key);
+            while ((newRoot != null) && value == null)
+            {            
+                if (key.compareTo(newRoot.getData().getKey()) < 0)
+                    newRoot = newRoot.getLeft();
+                else if (key.compareTo(newRoot.getData().getKey()) > 0)
+                    newRoot = newRoot.getRight();
+                else
+                {
+                    value = newRoot.getData().getValue();
+                    break;
+                }
+                
+            }
             
             if(value == null)
                 throw new AssertionError("The given key is not present in the dictionary");
@@ -271,35 +286,6 @@ public class BSTDictionary implements Dictionary
         }
         
         return root;
-    }
-    
-    
-    /**
-     * helper method to get the value of the given key using recursion
-     * @param root
-     * @param key
-     * @return value 
-     */
-    private String getValue(BSTNode root, String key)
-    {
-        String value = null;
-
-        while ((root != null) && value == null)
-        {            
-            if (key.compareTo(root.getData().getKey()) < 0)
-                root = root.getLeft();
-            else if (key.compareTo(root.getData().getKey()) > 0)
-                root = root.getRight();
-            else
-            {
-                value = root.getData().getValue();
-                break;
-            }
-            
-            value = getValue(root, key);
-        }
-
-        return value;
     }
     
     
