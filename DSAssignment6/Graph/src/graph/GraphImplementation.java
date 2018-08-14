@@ -1,18 +1,26 @@
 package graph;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
+
+/**
+ * class to implement the Graph interface to represent an undirected weighted graph
+ * @author Prakalpa-Rathore
+ *
+ */
 public class GraphImplementation implements Graph
 {
     int noOfVertices;
-    List<Edge>[] edgeList;
+    List<Edge>[] edgeList; 
     
     
+    /**
+     * constructor
+     * @param noOfVertices
+     */
     public GraphImplementation(int noOfVertices)
     {
         this.noOfVertices = noOfVertices;
@@ -22,12 +30,24 @@ public class GraphImplementation implements Graph
             edgeList[i] = new LinkedList<Edge>();
     }
     
+    
+    /**
+     * method to add an edge into the graph
+     * @param source
+     * @param destination
+     * @param weight
+     */
     public void addEdge(int source, int destination, int weight) 
     {
         edgeList[source].add(new Edge(source, destination, weight));
         edgeList[destination].add(new Edge(destination, source, weight));
     }
 
+    
+    /**
+     * method to check whether the graph is connected or not using DFS traversal
+     * @return boolean value
+     */
     @Override
     public boolean isConnected() {
         
@@ -52,6 +72,12 @@ public class GraphImplementation implements Graph
         return isConnected;
     }
 
+    
+    /**
+     * method to find all the vertices which are reachable from the source vertex
+     * @param source vertex
+     * @return list of reachable vertices
+     */
     @Override
     public List<Integer> reachable(int source)
     {
@@ -74,6 +100,11 @@ public class GraphImplementation implements Graph
         return reachableNodes;
     }
 
+    
+    /**
+     * method to create the minimum spanning tree using greedy approach
+     * @return list of edges in minimum spanning tree
+     */
     @Override
     public List<Edge> minimumSpanningTree()
     {
@@ -102,13 +133,10 @@ public class GraphImplementation implements Graph
             {
                 for (Edge listEdges : edges) 
                 {
-                    if (listEdges.getDestination() == v) 
-                    {                        
-                        if (listEdges.getWeight() != 0 && !mstSet[v] && listEdges.getWeight() < key[v]) 
-                        {
-                            parent[v] = u;
-                            key[v] = listEdges.getWeight();
-                        }
+                    if (listEdges.getDestination() == v && listEdges.getWeight() != 0 && !mstSet[v] && listEdges.getWeight() < key[v]) 
+                    {   
+                        parent[v] = u;
+                        key[v] = listEdges.getWeight();                      
                     }
                 }
             }
@@ -119,7 +147,9 @@ public class GraphImplementation implements Graph
         for (int i = 1; i < noOfVertices; i++) 
         {
             List<Edge> edges = edgeList[i];
-            for (Edge edgeConnected : edges) {
+            
+            for (Edge edgeConnected : edges) 
+            {
                 if (edgeConnected.getDestination() == parent[i]) 
                 {
                     Edge edge = new Edge(parent[i], i, edgeConnected.getWeight());
@@ -127,13 +157,20 @@ public class GraphImplementation implements Graph
                 }
             }
         }
+        
         return minSpanningtree;
     }
 
+    
+    /**
+     * method to find the distance of the shortest path from source to destination
+     * @param source
+     * @param destination
+     * @return distance of shortest path
+     */
     @Override
     public int shortestPath(int source, int destination) 
     {
-        List<Edge> shortestPath;
         List<Edge> adjacentEdges = new LinkedList<>();
         int distance[] = new int[noOfVertices]; 
         
@@ -150,7 +187,7 @@ public class GraphImplementation implements Graph
         for (int count = 0; count < noOfVertices - 1; count++) 
         {
             int shortestDistanceNode = minKey(distance, processed);
-          //  System.out.println(shortestDistanceNode + "is");
+        
             processed[shortestDistanceNode] = true;
             adjacentEdges = edgeList[shortestDistanceNode];
             
@@ -173,15 +210,21 @@ public class GraphImplementation implements Graph
     }
     
     
-    private int minKey(int distance[], Boolean processed[]) 
+    /**
+     * helper method to find the vertex with the minimum key
+     * @param key
+     * @param processed
+     * @return vertex with the minimum key
+     */
+    private int minKey(int key[], Boolean processed[]) 
     {
         int min = Integer.MAX_VALUE, minIndex = -1;
         
         for (int vertex = 0; vertex < noOfVertices; vertex++)
         {
-        	if (processed[vertex] == false && distance[vertex] < min) 
+        	if (processed[vertex] == false && key[vertex] < min) 
             {
-                min = distance[vertex];
+                min = key[vertex];
                 minIndex = vertex;
             }
         }
@@ -190,6 +233,11 @@ public class GraphImplementation implements Graph
     }
     
     
+    /**
+     * helper method for Depth First Traversal
+     * @param graphNode
+     * @param nodeTraversed
+     */
     private void DFSTraversal(int graphNode, Boolean[] nodeTraversed) 
     {        
         nodeTraversed[graphNode] = true;
