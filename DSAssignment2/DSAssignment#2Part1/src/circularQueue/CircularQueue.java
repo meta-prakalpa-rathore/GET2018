@@ -96,12 +96,7 @@ public class CircularQueue<E> implements Queue<E>{
     @Override
     public boolean isEmpty() {
         
-        boolean isEmpty = false;
-        
-        if(rear == -1 && front == -1)
-            isEmpty = true;
-        
-        return isEmpty;
+        return (rear == -1 && front == -1);
     }
 
     
