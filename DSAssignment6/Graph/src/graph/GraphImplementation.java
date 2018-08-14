@@ -108,7 +108,7 @@ public class GraphImplementation implements Graph
     @Override
     public List<Edge> minimumSpanningTree()
     {
-        List<Edge> minSpanningtree;
+        List<Edge> minSpanningtree = new ArrayList<>();
         int parent[] = new int[noOfVertices];
         int key[] = new int[noOfVertices];
         Boolean mstSet[] = new Boolean[noOfVertices];
@@ -124,26 +124,24 @@ public class GraphImplementation implements Graph
         
         for (int count = 0; count < noOfVertices - 1; count++) 
         {
-            int u = minKey(key, mstSet);
+            int minKey = minKey(key, mstSet);
             
-            mstSet[u] = true;
-            List<Edge> edges = edgeList[u];
+            mstSet[minKey] = true;
+            List<Edge> edges = edgeList[minKey];
             
-            for (int v = 0; v < noOfVertices; v++) 
+            for (Edge edge : edges) 
             {
-                for (Edge listEdges : edges) 
-                {
-                    if (listEdges.getDestination() == v && listEdges.getWeight() != 0 && !mstSet[v] && listEdges.getWeight() < key[v]) 
-                    {   
-                        parent[v] = u;
-                        key[v] = listEdges.getWeight();                      
-                    }
+                int v = edge.getDestination();
+                
+                if (!mstSet[v] && edge.getWeight() < key[v]) 
+                {   
+                    parent[v] = minKey;
+                    key[v] = edge.getWeight();                      
                 }
             }
+            
         }
        
-        minSpanningtree = new ArrayList<>();
-        
         for (int i = 1; i < noOfVertices; i++) 
         {
             List<Edge> edges = edgeList[i];
@@ -191,19 +189,14 @@ public class GraphImplementation implements Graph
             processed[shortestDistanceNode] = true;
             adjacentEdges = edgeList[shortestDistanceNode];
             
-            for (int v = 0; v < noOfVertices; v++)
-            {    
-                for (Edge listEdges : adjacentEdges) 
-                {
-                    if (listEdges.getDestination() == v)
-                    {
-                        if (!processed[v] && listEdges.getWeight() != 0 && distance[shortestDistanceNode] != Integer.MAX_VALUE && distance[shortestDistanceNode] + listEdges.getWeight() < distance[v])
-                        {
-                            distance[v] = distance[shortestDistanceNode] + listEdges.getWeight();
-                        }
-                    }
-                }
-            }
+            for (Edge listEdges : adjacentEdges) 
+            {
+                int v = listEdges.getDestination();
+                
+                if (!processed[v] && distance[shortestDistanceNode] + listEdges.getWeight() < distance[v])
+                    distance[v] = distance[shortestDistanceNode] + listEdges.getWeight();
+                                    
+            }            
         }
         
         return distance[destination];
