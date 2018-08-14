@@ -114,19 +114,19 @@ public class CounsellingProcess {
 	        WritableSheet studentWorkbookSheet = studentWorkbook.createSheet("sheet1", 0); //creating a new sheet
 	        
 	        //adding data to the newly created workbook
-            for(int i = 1; i <= allocationMap.size(); i++)
-            {                
-                for(String studentName: allocationMap.keySet())
-                {
-                    
-                    Label l1 = new Label(0, i, studentName);
-                    studentWorkbookSheet.addCell(l1);
-                    
-                    Label l2 = new Label(1, i, allocationMap.get(studentName));
-                    studentWorkbookSheet.addCell(l2);
-                }
-    
-            }
+            int i = 1;
+            
+            for(String studentName: allocationMap.keySet())
+            {
+                
+                Label l1 = new Label(0, i, studentName);
+                studentWorkbookSheet.addCell(l1);
+                
+                Label l2 = new Label(1, i, allocationMap.get(studentName));
+                studentWorkbookSheet.addCell(l2);
+                
+                i++;
+            }      
             
             studentWorkbook.write();
             studentWorkbook.close();      
