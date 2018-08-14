@@ -29,7 +29,7 @@ public class PostfixEvaluation {
         {
             if(isInteger(token))
                 stack.push((double)Integer.parseInt(token));
-            else if(isOperator(token))
+            else 
             {
                 double operand2 = stack.pop();
                 double operand1 = stack.pop();
@@ -49,10 +49,10 @@ public class PostfixEvaluation {
                                 throw new AssertionError("Divide by zero exception");
                               stack.push(operand1 / operand2);
                               break;
+                        
+                    default : throw new AssertionError("Invalid expresion! Expression must contain only integers and operators!");
                 }
-            }
-            else
-                throw new AssertionError("Invalid expresion! Expression must contain only integers and operators!"); 
+            }                 
         }
         
         double result = stack.pop();
