@@ -6,7 +6,7 @@ WHERE orders.placed_date > (DATE_SUB(CURDATE(), INTERVAL 30 DAY))
 GROUP BY orders.user_id;
 
 /*Display the top 10 Shoppers who generated maximum number of revenue in last 30 days*/
-SELECT users.user_id, users.first_name , SUM(orders.total_bill) as sum
+SELECT users.user_id, users.first_name , SUM(orders.total_bill) AS sum
 FROM orders INNER JOIN users
 ON orders.user_id = users.user_id
 WHERE orders.placed_date > (DATE_SUB(CURDATE(), INTERVAL 30 DAY))
@@ -15,7 +15,7 @@ ORDER BY sum DESC
 LIMIT 10;
 
 /*Display top 20 Products which are ordered most in last 60 days along with numbers*/
-SELECT product.product_id ,  product.name , COUNT(order_line_item.product_id) as product_count
+SELECT product.product_id ,  product.name , COUNT(order_line_item.product_id) AS product_count
 FROM product INNER JOIN order_line_item
 ON product.product_id = order_line_item.product_id
 INNER JOIN orders
@@ -55,7 +55,7 @@ ON category.category_id = product_category.category_id
 WHERE category.name = "Mobile Accessories";
 
 /*Display top 10 Items which were cancelled most.*/
-SELECT product.product_id , product.name , COUNT(order_line_item.status) as cancel_count
+SELECT product.product_id , product.name , COUNT(order_line_item.status) AS cancel_count
 FROM product INNER JOIN order_line_item
 ON product.product_id = order_line_item.product_id
 WHERE order_line_item.status = "cancelled"
