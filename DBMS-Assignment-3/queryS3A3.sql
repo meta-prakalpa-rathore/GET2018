@@ -22,7 +22,7 @@ INNER JOIN orders
 ON order_line_item.order_id = orders.order_id
 WHERE orders.placed_date > (DATE_SUB(CURDATE(), INTERVAL 60 DAY))
 GROUP BY order_line_item.product_id
-ORDER BY product_count
+ORDER BY product_count DESC
 LIMIT 20;
 
 /*Display Monthly sales revenue of the StoreFront for last 6 months. It should display each month’s sale*/
@@ -39,11 +39,11 @@ AFTER description;
 
 UPDATE product
 SET product_state = "inactive"
-WHERE product.product_id IN 
+WHERE product.product_id NOT IN 
     (SELECT order_line_item.product_id
      FROM orders INNER JOIN order_line_item
      ON orders.order_id= order_line_item.order_id
-     WHERE orders.placed_date < (DATE_SUB(CURDATE(), INTERVAL 90 DAY))
+     WHERE orders.placed_date > (DATE_SUB(CURDATE(), INTERVAL 90 DAY))
     );
                      
 /*Given a category search keyword, display all the Products present in this category/categories*/
