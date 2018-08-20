@@ -1,6 +1,7 @@
 #Display Recent 50 Orders placed(Id, Order Date, Order Total)
 SELECT order_id, placed_date, total_bill 
 FROM orders
+WHERE placed_date IS NOT NULL
 ORDER BY placed_date DESC LIMIT 50;
 
 #Display 10 most expensive Orders.
