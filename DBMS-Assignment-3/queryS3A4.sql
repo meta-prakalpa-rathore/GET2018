@@ -4,7 +4,7 @@ State.*/
 /*Create appropriate tables and relationships for the same and write a SQL
 query for that returns a Resultset containing Zip Code, City Names and
 States ordered by State Name and City Name.*/
-USE storefront;
+USE store_front;
 
 CREATE TABLE state(
 state_id INTEGER AUTO_INCREMENT,
@@ -59,7 +59,5 @@ VALUES("313002", 1),
       ("474005", 8);
       
 SELECT z.zipcode , c.city_name , s.state_name
-FROM zipcode z, city c, state s
-WHERE z.zipcode = "121003" 
-AND z.city_id = c.city_id
-AND s.state_id = c.state_id;
+FROM zipcode z INNER JOIN city c ON z.city_id = c.city_id INNER JOIN state s ON s.state_id = c.state_id
+WHERE z.zipcode = "121003"; 
