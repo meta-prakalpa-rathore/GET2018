@@ -39,3 +39,4 @@ WHERE available_stock < 50;
 SET SQL_SAFE_UPDATES = 0;
 UPDATE product
 SET available_stock = available_stock + 100;
+SET SQL_SAFE_UPDATES = 1;
