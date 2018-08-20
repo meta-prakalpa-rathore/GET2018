@@ -31,7 +31,7 @@ AND users.type = "shopper";
 SELECT u.user_id , u.first_name , o.total_bill
 FROM orders o INNER JOIN users u
 ON u.user_id = o.user_id
-WHERE placed_date > (DATE_SUB(CURDATE(), INTERVAL 1 MONTH));
+WHERE placed_date > (DATE_SUB(CURDATE(), INTERVAL 15 DAY));
 
 #Display list of ORDER items which are in “shipped” state for particular Order Id (i.e.: 1020))
 SELECT p.product_id , p.name
