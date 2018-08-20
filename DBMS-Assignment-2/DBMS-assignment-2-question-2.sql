@@ -7,7 +7,7 @@ ORDER BY product.product_id DESC;
 #Display the list of products which don't have any images.
 SELECT product.name 
 FROM product
-WHERE product_id NOT IN (SELECT product_id FROM image);
+WHERE product_id NOT IN (SELECT DISTINCT product_id FROM image);
 
 #Display all Id, Title and Parent Category Title for all the Categories listed,
 #sorted by Parent Category Title and then Category Title.
@@ -23,10 +23,10 @@ SELECT child.category_id, child.name, IFNULL(parent.name, 'Top Category') AS par
 FROM category child
 LEFT JOIN category parent
 ON child.parent_category_id = parent.category_id
-WHERE child.category_id NOT IN (SELECT parent_category_id FROM category WHERE parent_category_id IS NOT NULL);
+WHERE child.category_id NOT IN (SELECT DISTINCT parent_category_id FROM category WHERE parent_category_id IS NOT NULL);
 
 #Display Product Title, Price & Description which falls into particular category Title (i.e. “Mobile”)
-SELECT category.name,product.name, product.price, product.description
+SELECT product.name, product.price, product.description
 FROM product, category, product_category
 WHERE product_category.product_id = product.product_id AND product_category.category_id = category.category_id AND category.name = "Mobile";
 
