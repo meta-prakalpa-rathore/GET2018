@@ -12,7 +12,6 @@ END$$
 
 SELECT order_in_month(06,2018);
 
-DROP FUNCTION order_in_month;
 #Create a function to return month in a year having maximum orders. Year will be input parameter.
 DELIMITER $$
 CREATE FUNCTION highest_order(year INT)
@@ -28,11 +27,8 @@ WHERE orders.placed_date IS NOT NULL
 GROUP BY month
 ORDER BY monthly_order DESC LIMIT 1
 ) temp
-INTO order_month
-;
+INTO order_month;
 RETURN (order_month);
 END$$
 
 SELECT highest_order(2018);
-
-DROP FUNCTION highest_order;
