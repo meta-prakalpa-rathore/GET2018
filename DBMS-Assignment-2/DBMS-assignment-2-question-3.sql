@@ -47,7 +47,7 @@ FROM product p INNER JOIN order_line_item os
 ON os.product_id = p.product_id
 INNER JOIN orders o
 ON o.order_id = os.order_id
-WHERE p.price >=20000 AND p.price<=50000;
+WHERE os.status IS NOT NULL AND p.price >=20000 AND p.price<=50000;
 
 #Update first 20 Order items status to “Shipped” which are placed today.
 SET SQL_SAFE_UPDATES = 0;
