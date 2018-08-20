@@ -2,14 +2,14 @@
 SELECT users.user_id, users.first_name, users.last_name, COUNT(orders.user_id) AS orders_in_last_30_days
 FROM users INNER JOIN orders
 ON users.user_id = orders.user_id
-WHERE orders.placed_date > (DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
+WHERE orders.placed_date > (DATE_SUB(CURDATE(), INTERVAL 30 DAY))
 GROUP BY orders.user_id;
 
 /*Display the top 10 Shoppers who generated maximum number of revenue in last 30 days*/
 SELECT users.user_id, users.first_name , SUM(orders.total_bill) as sum
 FROM orders INNER JOIN users
 ON orders.user_id = users.user_id
-WHERE orders.placed_date > (DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
+WHERE orders.placed_date > (DATE_SUB(CURDATE(), INTERVAL 30 DAY))
 GROUP BY orders.user_id
 ORDER BY sum DESC
 LIMIT 10;
@@ -20,7 +20,7 @@ FROM product INNER JOIN order_line_item
 ON product.product_id = order_line_item.product_id
 INNER JOIN orders
 ON order_line_item.order_id = orders.order_id
-WHERE orders.placed_date > (DATE_SUB(CURDATE(), INTERVAL 2 MONTH))
+WHERE orders.placed_date > (DATE_SUB(CURDATE(), INTERVAL 60 DAY))
 GROUP BY order_line_item.product_id
 ORDER BY product_count
 LIMIT 20;
@@ -43,7 +43,7 @@ WHERE product.product_id IN
     (SELECT order_line_item.product_id
      FROM orders INNER JOIN order_line_item
      ON orders.order_id= order_line_item.order_id
-     WHERE orders.placed_date < (DATE_SUB(CURDATE(), INTERVAL 3 MONTH))
+     WHERE orders.placed_date < (DATE_SUB(CURDATE(), INTERVAL 90 DAY))
     );
                      
 /*Given a category search keyword, display all the Products present in this category/categories*/
