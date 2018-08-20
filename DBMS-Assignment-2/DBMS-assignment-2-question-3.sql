@@ -7,6 +7,7 @@ ORDER BY placed_date DESC LIMIT 50;
 #Display 10 most expensive Orders.
 SELECT order_id, total_bill
 FROM orders
+WHERE placed_date IS NOT NULL
 ORDER BY total_bill DESC LIMIT 10;
 
 #Display all the Orders which are placed more than 10 days old AND one or more items FROM those orders are still not shipped.
@@ -59,3 +60,4 @@ from orders
 where orders.placed_date=CURDATE()
 )
 LIMIT 20;
+SET SQL_SAFE_UPDATES = 1;
