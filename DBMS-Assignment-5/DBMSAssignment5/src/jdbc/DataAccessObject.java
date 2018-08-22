@@ -158,7 +158,7 @@ public class DataAccessObject
                 + "SELECT count(category_id) INTO count "
                 + "FROM category, "
                 + "(SELECT @parent_set := parent_id) initialisation "
-                + "WHERE find_in_set(parent_category_id, @parent_set) AND length(@parent_set := concat(@parent_set, ',', category_id)); "
+                + "WHERE find_in_set(parent_category_id, @parent_set) AND @parent_set := concat(@parent_set, ',', category_id); "
                 + "RETURN count; "
                 + "END";
         
