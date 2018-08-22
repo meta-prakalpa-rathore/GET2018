@@ -156,9 +156,9 @@ public class DataAccessObject
                 + "BEGIN "
                 + "DECLARE count INTEGER; "
                 + "SELECT count(category_id) INTO count "
-                + "FROM (SELECT * FROM category ORDER BY parent_category_id, category_id) category_sorted, "
-                + "(SELECT @pv := parent_id) initialisation "
-                + "WHERE find_in_set(parent_category_id, @pv) AND length(@pv := concat(@pv, ',', category_id)); "
+                + "FROM category, "
+                + "(SELECT @parent_set := parent_id) initialisation "
+                + "WHERE find_in_set(parent_category_id, @parent_set) AND length(@parent_set := concat(@parent_set, ',', category_id)); "
                 + "RETURN count; "
                 + "END";
         
