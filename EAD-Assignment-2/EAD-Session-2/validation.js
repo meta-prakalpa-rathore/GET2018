@@ -3,11 +3,11 @@ function firstNameValidate(){
 	var nameRegEx = /^[a-zA-Z\s]*$/;
 	if(text.value.length < 2 || !nameRegEx.test(text.value)){
 		text.style.border = "solid thin red";
-		err1.innerHTML = "Invalid first name";
+		fnameErr.innerHTML = "Invalid first name";
 		return false;
 	}
 	else{
-		err1.innerHTML = "";
+		fnameErr.innerHTML = "";
 		text.style.borderColor = "";
 		return true;
 	}
@@ -18,11 +18,11 @@ function lastNameValidate(){
 	var nameRegEx = /^[a-zA-Z]*$/;
 	if(text.value.length < 2 || !nameRegEx.test(text.value)){
 		text.style.border = "solid thin red";
-		err2.innerHTML = "Invalid last name";
+		lnameErr.innerHTML = "Invalid last name";
 		return false;
 	}
 	else{
-		err2.innerHTML = "";
+		lnameErr.innerHTML = "";
 		text.style.borderColor = "";
 		return true;
 	}
@@ -33,11 +33,11 @@ function emailValidate(){
 	var emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	if(!emailRegEx.test(text.value)){
 		text.style.border = "solid thin red";
-		err3.innerHTML = "Invalid email";
+		emailErr.innerHTML = "Invalid email";
 		return false;
 	}
 	else{
-		err3.innerHTML = "";
+		emailErr.innerHTML = "";
 		text.style.borderColor = "";
 		return true;
 	}
@@ -45,12 +45,14 @@ function emailValidate(){
 
 function passValidate(){
 	var text = document.getElementById("pass");
-	var passRegEx = /^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+	var passRegEx = /^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
 	if(!passRegEx.test(text.value)){
 		text.style.border = "solid thin red";
+		passErr.innerHTML = "password must contain an uppercase letter, a lowercase letter, a number and length should be minimum 8 characters";
 		return false;
 	}
 	else{
+		passErr.innerHTML = "";
 		text.style.borderColor = "";
 		return true;
 	}
@@ -60,11 +62,11 @@ function cpassValidate(){
 	var text = document.getElementById("cpass");
 	if(document.getElementById("pass").value != text.value){
 		text.style.border = "solid thin red";
-		err5.innerHTML = "Passwords do'nt match!";
+		cpassErr.innerHTML = "Passwords don't match!";
 		return false;
 	}
 	else{
-		err5.innerHTML = "";
+		cpassErr.innerHTML = "";
 		text.style.borderColor = "";
 		return true;
 	}
@@ -75,24 +77,24 @@ function contactValidate(){
 	var contactRegEx = /^[0-9]*$/;
 	if(text.value.length < 8 || !contactRegEx.test(text.value)){
 		text.style.border = "solid thin red";
-		err6.innerHTML = "Invalid contact number";
+		contactErr.innerHTML = "Invalid contact number";
 		return false;
 	}
 	else{
-		err6.innerHTML = "";
+		contactErr.innerHTML = "";
 		text.style.borderColor = "";
 		return true;
 	}
 }
 
 function submitForm(){
-	if(firstNameValidate() && lastNameValidate() && emailValidate() && passValidate() && cpassValidate() && contactValidate()){
+	if(firstNameValidate() & lastNameValidate() & emailValidate() & passValidate() & cpassValidate() & contactValidate()){
 		signup.submit();
 	}
 }
 
 function submitLogin(){
-	if(emailValidate() && passValidate()){
+	if(emailValidate() & passValidate()){
 		login.submit();
 	}
 }

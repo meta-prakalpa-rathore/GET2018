@@ -33,37 +33,37 @@
 			<form id = "signup" action = "login.html" method = "post">
 				<table class="form-style-1">
 					<tr>
-						<td><label>First Name</label></td>
+						<td><label>First Name<span>*</span></label></td>
 						<td><input type = "text" class = "" name = "firstname" id = "fname" onfocusout = "firstNameValidate()" /></td>
-						</tr><tr><td></td><td><span id = "err1"></span></td>
+						</tr><tr><td></td><td><span id = "fnameErr"></span></td>
 					</tr>
 					<tr>
-						<td><label>Last Name</label></td>
+						<td><label>Last Name<span>*</span></label></td>
 						<td><input type = "text" name = "lastname" id = "lname" onfocusout = "lastNameValidate()" /></td>
-						</tr><tr><td></td><td><span id = "err2"></span></td>
+						</tr><tr><td></td><td><span id = "lnameErr"></span></td>
 					</tr>
 					<tr>
-						<td><label>Email</label></td>
+						<td><label>Email<span>*</span></label></td>
 						<td><input type = "text" name = "email" id = "email" onfocusout = "emailValidate()" /></td>
-						</tr><tr><td></td><td><span id = "err3"></span></td>
+						</tr><tr><td></td><td><span id = "emailErr"></span></td>
 					</tr>
 					<tr>
-						<td><label>Password</label></td>
-						<td><input type = "password" name = "password" id = "pass" onfocusout = "passValidate()" /></td>
-						</tr><tr><td></td><td><span id = "err4">password must contain an uppercase letter, a lowercase letter, a number and length should be minimum 8 characters</span></td>
+						<td><label>Password<span>*</span></label></td>
+						<td><input type = "password" name = "password" id = "pass" title = "password must contain an uppercase letter, a lowercase letter, a number and length should be minimum 8 characters" onfocusout = "passValidate()" /></td>
+						</tr><tr><td></td><td><span id = "passErr"></span></td>
 					</tr>
 					<tr>
-						<td><label>Confirm Password</label></td>
+						<td><label>Confirm Password<span>*</span></label></td>
 						<td><input type = "password" name = "confirmPassword" id = "cpass" onfocusout = "cpassValidate()" /></td>
-						</tr><tr><td></td><td><span id = "err5"></span></td>
+						</tr><tr><td></td><td><span id = "cpassErr"></span></td>
 					</tr>
 					<tr>
-						<td><label>Contact Number</label></td>
+						<td><label>Contact Number<span>*</span></label></td>
 						<td><input type = "text" name = "contact" id = "contact" onfocusout = "contactValidate()" /></td>
-						</tr><tr><td></td><td><span id = "err6"></span></td>
+						</tr><tr><td></td><td><span id = "contactErr"></span></td>
 					</tr>
 					<tr>
-						<td><label>Company/Institution</label></td>
+						<td><label>Company/Institution<span>*</span></label></td>
 						<td>
 							<select name = "company" id = "company" class="field-select">
 								<option value = "metacube">Metacube Software Pvt. Ltd.</option>
