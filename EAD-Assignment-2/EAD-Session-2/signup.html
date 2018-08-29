@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>www.html5.com</title>
+		<script src = "validation.js"></script>
+		<link href = "forms.css" rel = "stylesheet">
+		<link href = "headers.css" rel = "stylesheet">
+	</head>
+
+	<body>
+		<center>
+			<table width = 100% class = "header-font-1">
+				<tr>
+					<td>
+						<img src = "html5logo.png" id = "logo" height = 50px>
+					</td>
+					<td align = "right">
+						<a href = "home.html">Home</a>
+						<a href = "#">About</a>
+						<a href = "#">Product</a>
+						<a href = "#">Gallery</a>
+						<a href = "contact.html">Contact</a>
+						<a href = "login.html">Login</a>
+						<a href = "signup.html">Signup</a>
+					</td>
+				</tr>
+			</table>
+
+			<hr/>
+			<br /><br />
+			<h1>Signup</h1>
+			
+			<form id = "signup" action = "login.html" method = "post">
+				<table class="form-style-1">
+					<tr>
+						<td><label>First Name</label></td>
+						<td><input type = "text" class = "" name = "firstname" id = "fname" onfocusout = "firstNameValidate()" /></td>
+						</tr><tr><td></td><td><span id = "err1"></span></td>
+					</tr>
+					<tr>
+						<td><label>Last Name</label></td>
+						<td><input type = "text" name = "lastname" id = "lname" onfocusout = "lastNameValidate()" /></td>
+						</tr><tr><td></td><td><span id = "err2"></span></td>
+					</tr>
+					<tr>
+						<td><label>Email</label></td>
+						<td><input type = "text" name = "email" id = "email" onfocusout = "emailValidate()" /></td>
+						</tr><tr><td></td><td><span id = "err3"></span></td>
+					</tr>
+					<tr>
+						<td><label>Password</label></td>
+						<td><input type = "password" name = "password" id = "pass" onfocusout = "passValidate()" /></td>
+						</tr><tr><td></td><td><span id = "err4">password must contain an uppercase letter, a lowercase letter, a number and length should be minimum 8 characters</span></td>
+					</tr>
+					<tr>
+						<td><label>Confirm Password</label></td>
+						<td><input type = "password" name = "confirmPassword" id = "cpass" onfocusout = "cpassValidate()" /></td>
+						</tr><tr><td></td><td><span id = "err5"></span></td>
+					</tr>
+					<tr>
+						<td><label>Contact Number</label></td>
+						<td><input type = "text" name = "contact" id = "contact" onfocusout = "contactValidate()" /></td>
+						</tr><tr><td></td><td><span id = "err6"></span></td>
+					</tr>
+					<tr>
+						<td><label>Company/Institution</label></td>
+						<td>
+							<select name = "company" id = "company" class="field-select">
+								<option value = "metacube">Metacube Software Pvt. Ltd.</option>
+								<option value = "infosys">Infosys Limited</option>
+								<option value = "google">Google LLC</option>
+								<option value = "microsoft">Microsoft Corporation</option>
+								<option value = "tcs">Tata Consultancy Services Limited</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><input type = "button" value = "Signup" onclick = "submitForm()"/></td>
+					</tr>
+				</table>
+			</form>
+			<br /><br />
+			<footer>&copy;Copyright 2017-18 | All Rights Reserved | Metacube Training</footer>
+		</center>
+	</body>
+
+</html>
