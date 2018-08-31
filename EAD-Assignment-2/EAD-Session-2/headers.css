@@ -3,7 +3,8 @@
 }
 
 .header-font-1 {
-	background: #04060F;	
+	background: #04060F;
+	width: 100%;
 }
 
 #logo {
@@ -44,6 +45,7 @@ h1 {
 	font-weight: normal; 
 	line-height: 48px; 
 	margin: 0; 
+	text-align: center;
 }
 
 footer {
@@ -52,8 +54,19 @@ footer {
 	color: #fff;
     bottom:0;
 	width: 98.4%;
+	text-align: center;
 }
 
 #fixfooter {
 	position: fixed;
+}
+
+.table-font-1{
+	width: 100%;
+}
+
+#banner {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }

@@ -7,70 +7,68 @@
 	</head>
 
 	<body>
-		<center>
-			<table width = 100% class = "header-font-1">
+		<table class = "header-font-1">
+			<tr>
+				<td>
+					<img src = "html5logo.png" id = "logo" height = 50px>
+				</td>
+				<td align = "right">
+					<a href = "home.html">Home</a>
+					<a href = "#">About</a>
+					<a href = "#">Product</a>
+					<a href = "#">Gallery</a>
+					<a href = "contact.html">Contact</a>
+					<a href = "login.html">Login</a>
+					<a href = "signup.html">Signup</a>
+				</td>
+			</tr>
+		</table>
+
+		<hr/>
+		<img src="contact_us_banner1.jpg" id="banner" width=75%>
+		<br/><br/>
+
+		<form>
+			<table class="form-style-1">
 				<tr>
+					<td><label>Name</label></td>
+					<td><input type = "text" name = "name"/></td>
+				</tr>
+				<tr>
+					<td><label>Email</label></td>
+					<td><input type = "email" name = "email"/></td>
+				</tr>
+				<tr>
+					<td><label>City</label></td>
 					<td>
-						<img src = "html5logo.png" id = "logo" height = 50px>
-					</td>
-					<td align = "right">
-						<a href = "home.html">Home</a>
-						<a href = "#">About</a>
-						<a href = "#">Product</a>
-						<a href = "#">Gallery</a>
-						<a href = "contact.html">Contact</a>
-						<a href = "login.html">Login</a>
-						<a href = "signup.html">Signup</a>
+						<select name = "city">
+							<option value = "jaipur">Jaipur</option>
+							<option value = "ajmer">Ajmer</option>
+							<option value = "kota">Kota</option>
+							<option value = "udaipur">Udaipur</option>
+							<option value = "tonk">Tonk</option>
+						</select>
 					</td>
 				</tr>
+				<tr>
+					<td><label>Organization Name</label></td>
+					<td><input type = "text" name = "org_name"/></td>
+				</tr>
+				<tr>
+					<td><label>Contact Number</label></td>
+					<td><input type = "text" name = "contact"/></td>
+				</tr>
+				<tr>
+					<td><label>Message</label></td>
+					<td><textarea name="message" cols="15" rows="2"></textarea></td>
+				</tr>
+				<tr>
+					<td><input type = "submit" value = "Submit"/></td>
+				</tr>
 			</table>
-
-			<hr/>
-			<img src = "contact_us_banner1.jpg" width = 70%>
-			<br/><br/>
-
-			<form>
-				<table class="form-style-1">
-					<tr>
-						<td><label>Name</label></td>
-						<td><input type = "text" name = "name"/></td>
-					</tr>
-					<tr>
-						<td><label>Email</label></td>
-						<td><input type = "email" name = "email"/></td>
-					</tr>
-					<tr>
-						<td><label>City</label></td>
-						<td>
-							<select name = "city">
-								<option value = "jaipur">Jaipur</option>
-								<option value = "ajmer">Ajmer</option>
-								<option value = "kota">Kota</option>
-								<option value = "udaipur">Udaipur</option>
-								<option value = "tonk">Tonk</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td><label>Organization Name</label></td>
-						<td><input type = "text" name = "org_name"/></td>
-					</tr>
-					<tr>
-						<td><label>Contact Number</label></td>
-						<td><input type = "text" name = "contact"/></td>
-					</tr>
-					<tr>
-						<td><label>Message</label></td>
-						<td><textarea name="message" cols="15" rows="2"></textarea></td>
-					</tr>
-					<tr>
-						<td><input type = "submit" value = "Submit"/></td>
-					</tr>
-				</table>
-			</form>
-			<br /><br /><br />
-			<footer>&copy;Copyright 2017-18 | All Rights Reserved | Metacube Training</footer>
-		</center>
+		</form>
+		<br /><br /><br />
+		<footer>&copy;Copyright 2017-18 | All Rights Reserved | Metacube Training</footer>
 	</body>
 	
 </html>
