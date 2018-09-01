@@ -17,26 +17,11 @@ import com.java.Employee;
 public class AddEmployee extends HttpServlet {
 
 	/**
-	 * service method to add the employee details to the database
+	 * service method to forward the request to addEmployees.html
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-	    response.setContentType("text/html");
-	    Dao dao = new Dao();
-	    PrintWriter out = response.getWriter();
-	    
-	    String firstName = request.getParameter("firstname");
-	    String lastName = request.getParameter("lastname");
-	    String email = request.getParameter("email");
-	    int age = Integer.parseInt(request.getParameter("age"));
-	    
-	    if(dao.addEmployee(new Employee(firstName, lastName, email, age)))
-	        out.println("<script>alert(\"successfully added!\")</script>");
-	    else
-	        out.println("<script>alert(\"ERROR!\")</script>");
-	    
-	    request.getRequestDispatcher("index.html").include(request, response);
-	    out.close();
+	    request.getRequestDispatcher("addEmployees.html").forward(request, response);
 	    
 	}
 
@@ -44,7 +29,23 @@ public class AddEmployee extends HttpServlet {
      * service method to add the employee details to the database
      */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+	    
+	    response.setContentType("text/html");
+        Dao dao = new Dao();
+        PrintWriter out = response.getWriter();
+        
+        String firstName = request.getParameter("firstname");
+        String lastName = request.getParameter("lastname");
+        String email = request.getParameter("email");
+        int age = Integer.parseInt(request.getParameter("age"));
+        
+        if(dao.addEmployee(new Employee(firstName, lastName, email, age)))
+            out.println("<script>alert(\"successfully added!\")</script>");
+        else
+            out.println("<script>alert(\"ERROR!\")</script>");
+        
+        request.getRequestDispatcher("index.html").include(request, response);
+        out.close();
 	}
 
 }
