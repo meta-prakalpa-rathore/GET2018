@@ -1,18 +1,20 @@
-create database advertise;
+CREATE DATABASE advertise;
 
-use advertise;
+USE advertise;
 
-create table category
-(   id int auto_increment,
-    category_name varchar(30) unique not null,
-    constraint PK_id primary key(id)
+CREATE TABLE category
+(   
+    id INT AUTO_INCREMENT,
+    category_name VARCHAR(30) UNIQUE NOT NULL,
+    CONSTRAINT PK_id PRIMARY KEY(id)
 );
 
-create table advertisement
-(   id int auto_increment,
-    title varchar(30),
-    description varchar(500),
-    category_id int,
-    constraint PK_id primary key(id),
-    constraint FK_id_category_id foreign key(category_id) references category(id)
+CREATE TABLE advertisement
+(   
+    id INT AUTO_INCREMENT,
+    title VARCHAR(30),
+    description VARCHAR(500),
+    category_id INT,
+    CONSTRAINT PK_id PRIMARY KEY(id),
+    CONSTRAINT FK_id_category_id FOREIGN KEY(category_id) REFERENCES category(id)
 );
