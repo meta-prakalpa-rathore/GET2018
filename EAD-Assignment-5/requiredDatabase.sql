@@ -4,7 +4,7 @@ use advertise;
 
 create table category
 (   id int auto_increment,
-    category_name varchar(30),
+    category_name varchar(30) unique not null,
     constraint PK_id primary key(id)
 );
 
