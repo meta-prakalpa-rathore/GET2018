@@ -10,6 +10,7 @@ public class SpellChecker {
 
     
     /**
+     * constructor
      * @param status
      */
     public SpellChecker(boolean status) {
@@ -19,6 +20,7 @@ public class SpellChecker {
 
 
     /**
+     * getter method for status
      * @return the status
      */
     public boolean isStatus() {
