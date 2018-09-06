@@ -1,5 +1,7 @@
 package com.metacube.training;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * @author Prakalpa-Rathore
  *
@@ -19,11 +21,15 @@ public class TextEditor {
     /**
      * @param spellChecker the spellChecker to set
      */
+    @Autowired
     public void setSpellChecker(SpellChecker spellChecker) {
         this.spellChecker = spellChecker;
     }
 
 
+    /**
+     * method to show whether spellChecker is on or of
+     */
     public void showStatus(){
      
         System.out.print("Spell checker is ");
