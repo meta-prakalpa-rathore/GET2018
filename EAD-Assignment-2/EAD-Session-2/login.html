@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>www.html5.com</title>
+		<script src = "validation.js"></script>
+		<link href = "forms.css" rel = "stylesheet">
+		<link href = "headers.css" rel = "stylesheet">
+	</head>
+
+	<body>
+		<table class = "header-font-1">
+			<tr>
+				<td>
+					<img src = "html5logo.png" id = "logo" height = 50px>
+				</td>
+				<td align = "right">
+					<a href = "home.html">Home</a>
+					<a href = "#">About</a>
+					<a href = "#">Product</a>
+					<a href = "#">Gallery</a>
+					<a href = "contact.html">Contact</a>
+					<a href = "login.html">Login</a>
+					<a href = "signup.html">Signup</a>
+				</td>
+			</tr>
+		</table>
+
+		<hr/>
+		<br /><br />
+		<h1>Login</h1>
+		
+		<form id = "login" action = "profile.html" method = "post">
+			<table class="form-style-1">
+				<tr>
+					<td><label>Email</label></td>
+					<td><input type = "text" name = "email" id = "email" onblur = "emailValidate()" /></td>
+					</tr><tr><td></td><td><span id = "emailErr"></span></td>
+				</tr>
+				<tr>
+					<td><label>Password</label></td>
+					<td><input type = "password" name = "password" id = "pass" onblur = "passValidate()"/></td>
+					</tr><tr><td></td><td><span id = "passErr"></span></td>
+				</tr>
+				<tr>
+					<td><input type = "button" value = "Login" onclick = "submitLogin()"/></td>
+				</tr>
+			</table>
+		</form>
+		<footer id = "fixfooter">&copy;Copyright 2017-18 | All Rights Reserved | Metacube Training</footer>
+	</body>
+	
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>www.html5.com</title>
+		<script src = "validation.js"></script>
+		<link href = "forms.css" rel = "stylesheet">
+		<link href = "headers.css" rel = "stylesheet">
+	</head>
+
+	<body>
+		<table class = "header-font-1">
+			<tr>
+				<td>
+					<img src = "html5logo.png" id = "logo" height = 50px>
+				</td>
+				<td align = "right">
+					<a href = "home.html">Home</a>
+					<a href = "#">About</a>
+					<a href = "#">Product</a>
+					<a href = "#">Gallery</a>
+					<a href = "contact.html">Contact</a>
+					<a href = "login.html">Login</a>
+					<a href = "signup.html">Signup</a>
+				</td>
+			</tr>
+		</table>
+
+		<hr/>
+		<br /><br />
+		<h1>Signup</h1>
+		
+		<form id = "signup" action = "login.html" method = "post">
+			<table class="form-style-1">
+				<tr>
+					<td><label>First Name<span>*</span></label></td>
+					<td><input type = "text" class = "" name = "firstname" id = "fname" onblur = "firstNameValidate()" /></td>
+					</tr><tr><td></td><td><span id = "fnameErr"></span></td>
+				</tr>
+				<tr>
+					<td><label>Last Name<span>*</span></label></td>
+					<td><input type = "text" name = "lastname" id = "lname" onblur = "lastNameValidate()" /></td>
+					</tr><tr><td></td><td><span id = "lnameErr"></span></td>
+				</tr>
+				<tr>
+					<td><label>Email<span>*</span></label></td>
+					<td><input type = "text" name = "email" id = "email" onblur = "emailValidate()" /></td>
+					</tr><tr><td></td><td><span id = "emailErr"></span></td>
+				</tr>
+				<tr>
+					<td><label>Password<span>*</span></label></td>
+					<td><input type = "password" name = "password" id = "pass" title = "password must contain an uppercase letter, a lowercase letter, a number and length should be minimum 8 characters" onblur = "passValidate()" /></td>
+					</tr><tr><td></td><td><span id = "passErr"></span></td>
+				</tr>
+				<tr>
+					<td><label>Confirm Password<span>*</span></label></td>
+					<td><input type = "password" name = "confirmPassword" id = "cpass" onblur = "cpassValidate()" /></td>
+					</tr><tr><td></td><td><span id = "cpassErr"></span></td>
+				</tr>
+				<tr>
+					<td><label>Contact Number<span>*</span></label></td>
+					<td><input type = "text" name = "contact" id = "contact" onblur = "contactValidate()" /></td>
+					</tr><tr><td></td><td><span id = "contactErr"></span></td>
+				</tr>
+				<tr>
+					<td><label>Company/Institution<span>*</span></label></td>
+					<td>
+						<select name = "company" id = "company" class="field-select">
+							<option value = "metacube">Metacube Software Pvt. Ltd.</option>
+							<option value = "infosys">Infosys Limited</option>
+							<option value = "google">Google LLC</option>
+							<option value = "microsoft">Microsoft Corporation</option>
+							<option value = "tcs">Tata Consultancy Services Limited</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><input type = "button" value = "Signup" onclick = "submitForm()"/></td>
+				</tr>
+			</table>
+		</form>
+		<br /><br />
+		<footer>&copy;Copyright 2017-18 | All Rights Reserved | Metacube Training</footer>
+	</body>
+
+</html>
