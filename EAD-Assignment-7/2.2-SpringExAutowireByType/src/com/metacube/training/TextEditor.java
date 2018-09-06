@@ -25,7 +25,7 @@ public class TextEditor {
 
 
     /**
-     * method to show whether spellChecker is on or of
+     * method to show whether spellChecker is on or off
      */
     public void showStatus(){
      
