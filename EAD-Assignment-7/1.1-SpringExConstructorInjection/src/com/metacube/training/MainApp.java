@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @author User5
+ * @author Prakalpa-Rathore
  *
  */
 public class MainApp {
