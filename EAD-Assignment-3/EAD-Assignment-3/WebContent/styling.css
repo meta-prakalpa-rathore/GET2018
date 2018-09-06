@@ -1,0 +1,120 @@
+@CHARSET "ISO-8859-1";
+.form-style-1 {
+    margin:10px auto;
+    padding: 20px 12px 10px 20px;
+    font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.form-style-1 a{
+	background: #4691A4;
+    padding: 8px 15px 8px 15px;
+    color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 40px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.form-style-1 a:hover{
+	background: #4691A4;
+    box-shadow: 0 5px #999;
+	transition: 0.5s;
+}
+
+.form-style-1 a:active{
+	background: #4691A4;
+    box-shadow: 0 3px #111;
+}
+
+.form-style-1 th {
+    padding: 6px 6px;
+    margin: 10px 0 0 0;
+    font-size: 15px;
+    text-align: left;
+}
+
+.form-style-1 td {
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.form-style-1 label{
+    margin:0 0 3px 0;
+    padding:0px;
+    display:block;
+    font-weight: bold;
+	font-size: 15px;
+}
+
+.form-style-1 input[type=text],
+.form-style-1 input[type=password],
+.form-style-1 input[type=email],
+.form-style-1 textarea,
+.form-style-1 select{
+	width:300px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:1px solid #BEBEBE;
+    padding: 7px;
+    margin:0px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none; 
+	resize: none;
+}
+
+.form-style-1 input[type=text]:focus,
+.form-style-1 input[type=password]:focus,
+.form-style-1 input[type=email]:focus,
+.form-style-1 textarea:focus,
+.form-style-1 select:focus{
+	-moz-box-shadow: 0 0 8px #88D5E9;
+    -webkit-box-shadow: 0 0 8px #88D5E9;
+    box-shadow: 0 0 8px #88D5E9;
+    border: 1px solid #88D5E9;
+}
+
+.form-style-1 input[type=button],
+.form-style-1 input[type=submit]{
+    background: #4B99AD;
+    padding: 7px 14px 7px 14px;
+	border: none;
+    color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 0 5px #999;
+	margin-top: 40px;
+	font-family: "Times New Roman";
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.form-style-1 input[type=button]:hover{
+    background: #4691A4;
+    box-shadow: 0 5px #999;
+}
+
+.form-style-1 input[type=button]:active{
+   background: #4691A4;
+   box-shadow: 0 5px #666;
+   transform: translateY(4px);
+}
+
+.form-style-1 span{
+	font-size: 13px;
+	color: #dd0000;
+	font-family: "New Century Schoolbook";
+}
+
+h1 {
+	color: #4691A4; 
+	font-family: 'Trocchi', serif; 
+	font-size:50px; 
+	font-weight: normal; 
+	line-height: 48px; 
+	margin: 0; 
+	text-align: center;
+}

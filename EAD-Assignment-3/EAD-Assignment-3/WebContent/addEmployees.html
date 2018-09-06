@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<link href="styling.css" rel="stylesheet"></link>
+	<script src = "validation.js"></script>
+</head>
+<body>
+	<br/> <br/>
+	<h1>Add Employee</h1>
+	<br/> <br/>
+	
+	<form id = "employeeForm" action="AddEmployee" method="post">
+		<table class="form-style-1">
+			<tr>
+				<td><label>First Name<span>*</span></label></td>
+				<td><input type = "text" name = "firstname" id = "fname" onfocusout = "firstNameValidate()" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span id = "fnameErr"></span></td>
+			</tr>
+			<tr>
+				<td><label>Last Name<span>*</span></label></td>
+				<td><input type = "text" name = "lastname" id = "lname" onfocusout = "lastNameValidate()" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span id = "lnameErr"></span></td>
+			</tr>
+			<tr>
+				<td><label>Email<span>*</span></label></td>
+				<td><input type = "text" name = "email" id = "email" onfocusout = "emailValidate()" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span id = "emailErr"></span></td>
+			</tr>
+			<tr>
+				<td><label>Age<span>*</span></label></td>
+				<td><input type = "text" name = "age" id = "age" onfocusout = "ageValidate()" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span id = "ageErr"></span></td>
+			</tr>
+			<tr>
+				<td><input type = "button" value = "Submit" onclick = "submitForm()" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
