@@ -24,6 +24,9 @@ public class TextEditor {
     }
 
 
+    /**
+     * method to show whether spellChecker is on or of
+     */
     public void showStatus(){
      
         System.out.print("Spell checker is ");
