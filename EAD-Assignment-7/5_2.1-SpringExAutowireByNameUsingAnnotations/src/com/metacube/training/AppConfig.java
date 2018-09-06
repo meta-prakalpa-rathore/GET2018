@@ -9,9 +9,7 @@ public class AppConfig {
     @Bean
     public TextEditor textEditor() {
         
-        TextEditor textEditor = new TextEditor();
-        textEditor.setSpellChecker(spellChecker());
-        return textEditor;
+        return new TextEditor();
     }
     
     
