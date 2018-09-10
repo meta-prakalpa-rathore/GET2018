@@ -6,14 +6,14 @@ CREATE TABLE Employee (
     emp_code VARCHAR(15),
     first_name VARCHAR(25) NOT NULL,
     middle_name  VARCHAR(25),
-    last_name VARCHAR(25),#not mentioned
+    last_name VARCHAR(25),
     dob DATE NOT NULL,
     gender CHAR(1) NOT NULL,
     primary_contact_no CHAR(10),
     secondary_contact_no CHAR(10),
     email VARCHAR(100) NOT NULL,
     skype_id VARCHAR(50),
-    profile_picture MEDIUMBLOB,#String in assignment
+    profile_picture MEDIUMBLOB,
     password VARCHAR(20) DEFAULT "123456",
     enabled BOOLEAN DEFAULT TRUE,
     CONSTRAINT PK_Employee PRIMARY KEY (emp_code)
@@ -52,30 +52,30 @@ CREATE TABLE Project(
     description VARCHAR(250) NOT NULL,
     start_date DATE NOT NULL,
     end_date DATE,
-    project_logo MEDIUMBLOB,#was string in assignment
+    project_logo MEDIUMBLOB,
     CONSTRAINT PK_Project PRIMARY KEY (project_id)
 );
 
 CREATE TABLE Address(
     address_id INTEGER AUTO_INCREMENT,
-    emp_code VARCHAR(15) NOT NULL,#was int in assignment
+    emp_code VARCHAR(15) NOT NULL,
     add_line_1 VARCHAR(100) NOT NULL,
     add_line_2 VARCHAR(100),
     city VARCHAR(25) NOT NULL,
     state VARCHAR(25) NOT NULL,
-    pincode CHAR(6) NOT NULL,#6 digit pincodes
+    pincode CHAR(6) NOT NULL,
     CONSTRAINT PK_Address PRIMARY KEY (address_id),
     CONSTRAINT FK_AddressEmployee_emp_code FOREIGN KEY (emp_code) REFERENCES Employee(emp_code) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE Job_Details(    
     job_detail_id INTEGER AUTO_INCREMENT,
-    emp_code VARCHAR(15),#was int in assignment
+    emp_code VARCHAR(15),
     date_of_joining DATE NOT NULL,
     total_exp DOUBLE,
-    job_code INTEGER,#was string in assignment
-    reporting_mgr VARCHAR(15),#was int in assignment
-    team_lead VARCHAR(15),#was int in assignment
+    job_code INTEGER,
+    reporting_mgr VARCHAR(15),
+    team_lead VARCHAR(15),
     curr_proj_id INTEGER,
     CONSTRAINT PK_Job_Details PRIMARY KEY (job_detail_id),
     CONSTRAINT FK_Job_DetailsEmployee_emp_code FOREIGN KEY (emp_code) REFERENCES Employee (emp_code),    
