@@ -115,15 +115,23 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	private String generateEmployeeCode(int year) {
 		
+		String employeeCode;
 		List<Employee> listOfEmployee = getAllEmployees();
 		int size = listOfEmployee.size();
-		int[] codes = new int[size];
+		if(size > 0)
+		{
+		    int[] codes = new int[size];
+	        
+	        for(int i = 0; i < size; i++)
+	            codes[i] = Integer.parseInt(listOfEmployee.get(i).getEmployeeCode().split("/")[1]);
+	            
+	        Arrays.sort(codes);
+	        employeeCode = "E" + year + "/" + (codes[size - 1] + 1);
+		}
+		else
+		    employeeCode = "E" + year + "/" + 1;
 		
-		for(int i = 0; i < size; i++)
-			codes[i] = Integer.parseInt(listOfEmployee.get(i).getEmployeeCode().split("/")[1]);
-			
-		Arrays.sort(codes);
-		return "E" + year + "/" + (codes[size - 1] + 1);
+		return employeeCode;
 	}
 
 }
