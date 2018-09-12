@@ -35,14 +35,6 @@
     <servlet-name>UpdateUser</servlet-name>
     <url-pattern>/controller/UpdateUser</url-pattern>
   </servlet-mapping>
-  <filter>
-    <filter-name>ValidateLogin</filter-name>
-    <filter-class>filters.ValidateLogin</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>ValidateLogin</filter-name>
-    <url-pattern>/controller/Profile</url-pattern>
-  </filter-mapping>
   <servlet>
     <servlet-name>ShowFriends</servlet-name>
     <servlet-class>controller.ShowFriends</servlet-class>
@@ -75,4 +67,25 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/controller/Login</url-pattern>
   </servlet-mapping>
+  
+  <filter>
+    <filter-name>ValidateLogin</filter-name>
+    <filter-class>filters.ValidateLogin</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ValidateLogin</filter-name>
+    <url-pattern>/controller/Profile</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>ValidateLogin</filter-name>
+    <url-pattern>/controller/ShowFriends</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>ValidateLogin</filter-name>
+    <url-pattern>/controller/FriendProfile</url-pattern>
+  </filter-mapping>
+    <filter-mapping>
+    <filter-name>ValidateLogin</filter-name>
+    <url-pattern>/controller/UpdateUser</url-pattern>
+  </filter-mapping>
 </web-app>

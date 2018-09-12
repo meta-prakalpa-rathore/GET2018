@@ -9,12 +9,9 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import dao.Dao;
-import dao.MysqlUserDao;
 
 /**
  * Servlet Filter implementation class ValidateLogin
@@ -42,7 +39,8 @@ public class ValidateLogin implements Filter {
 	    else
 	    {
 	        out.print("You need to login first");
-            request.getRequestDispatcher("../view/login.html").include(request, response);
+            HttpServletResponse httpResponse = (HttpServletResponse) response;
+            httpResponse.sendRedirect("../view/login.html");
 	    }
 		
 	}

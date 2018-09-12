@@ -33,22 +33,16 @@ function dobValidate(){
 	var today = new Date();
 	var date = new Date(date1.value);
 	
-//	if (date == "") {
-//		date1.style.border = "solid thin red";
-//		dobErr.innerHTML = "Please enter the Date..!!";
-//        return false;
-//    }
-//	else if (date > today) {
-//		date1.style.border = "solid thin red";
-//		dobErr.innerHTML = "Current or future date is not allowed";
-//        return false;
-//    }
-//	else{
-//		dobErr.innerHTML = "";
-//		date1.style.borderColor = "";
-//		return true;
-//	}	
-	return true;
+	if (date == "") {
+		date1.style.border = "solid thin red";
+		dobErr.innerHTML = "Please enter the Date..!!";
+        return false;
+    }
+	else{
+		dobErr.innerHTML = "";
+		date1.style.borderColor = "";
+		return true;
+	}	
 }
 
 function emailValidate(){
@@ -120,4 +114,8 @@ function submitUser(){
 	if(firstNameValidate() & lastNameValidate() & emailValidate() & contactValidate()){
 		userForm.submit();
 	}
+}
+
+function submitImage(){
+	changeImage.submit();
 }

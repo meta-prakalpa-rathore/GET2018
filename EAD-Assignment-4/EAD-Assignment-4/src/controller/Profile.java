@@ -35,13 +35,16 @@ public class Profile extends HttpServlet {
 		Dao dao = new MysqlUserDao();
 		UserTOforProfile user = dao.fetchUserDetails(id);
 		byte[] in = dao.getProfileImage(user.getEmail());
-		String s = Base64.getEncoder().encodeToString(in);
+		String s = null;
+		if(in != null)
+		    s = Base64.getEncoder().encodeToString(in);
 		
 		out.print("<html>");
 		out.print("<head>");
 		out.print("<title>Profile</title>");
 		out.print("<link href = '../stylesheets/forms.css' rel = 'stylesheet'>"
 		        + "<link href = '../stylesheets/headers.css' rel = 'stylesheet'>");
+		out.print("<script src = '../scripts/validation.js'></script>");
 		out.print("</head>");
 		out.print("<body>");
 		out.print("<div><table class = 'header-font-1'>");
@@ -68,13 +71,16 @@ public class Profile extends HttpServlet {
 		out.print("</table>");
 		out.print("</div>");
 		out.print("<div class='split right'>");
-		out.print("<form action='UploadImage' method='post' enctype='multipart/form-data'>");
+		out.print("<form id='changeImage' action='UploadImage' method='post' enctype='multipart/form-data'>");
 		out.print("<input type='hidden' name='email' value='" + user.getEmail() + "'>");
 		out.print("<label for = 'image'>");
-		out.print("<input type = 'file' name = 'image' id = 'image' style = 'display:none;'/>");
-		out.print("<img id = 'profileImage' src = 'data:image/jpeg;base64, " + s + "' alt = 'images/defaultProfileImage.png' accept = 'image/*' />");
+		out.print("<input type = 'file' name = 'image' id = 'image' style = 'display:none;' onchange='submitImage()'/>");
+		if(s != null)
+		    out.print("<img id = 'profileImage' src = 'data:image/jpeg;base64, " + s + "' alt = 'images/defaultProfileImage.png' accept = 'image/*' />");
+		else
+		    out.print("<img id = 'profileImage' src = '../images/default-profile-pic.png' alt = 'images/defaultProfileImage.png' accept = 'image/*' />");
 		out.print("</label>");
-		out.print("<input type='submit' value='change'>");
+		//out.print("<input type='submit' value='change'>");
 		out.print("</form>");
 		out.print("</div>");
 		

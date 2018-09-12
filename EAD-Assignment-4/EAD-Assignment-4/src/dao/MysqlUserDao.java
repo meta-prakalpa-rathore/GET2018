@@ -242,12 +242,17 @@ public class MysqlUserDao implements Dao {
             ResultSet result = stmt.executeQuery();
             result.next();
             Blob imageBlob = result.getBlob("profile_photo");
-            blobAsBytes = imageBlob.getBytes(1, (int) imageBlob.length());
+            if(imageBlob != null)              
+                blobAsBytes = imageBlob.getBytes(1, (int) imageBlob.length());
+            else
+                blobAsBytes = null;
+         
         }
         catch (SQLException exception) 
         {
             exception.printStackTrace();
         }
+        
         return blobAsBytes;
     }
     

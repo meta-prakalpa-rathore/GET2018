@@ -34,10 +34,6 @@ public class UploadImage extends HttpServlet {
 	    String email = request.getParameter("email");
 	    Part filePart = request.getPart("image");
         if (filePart != null) {
-            // prints out some information for debugging
-            System.out.println(filePart.getName());
-            System.out.println(filePart.getSize());
-            System.out.println(filePart.getContentType());
              
             // obtains input stream of the upload file
             inputStream = filePart.getInputStream();
