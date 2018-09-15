@@ -8,6 +8,8 @@ import javax.persistence.TypedQuery;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.CriteriaSpecification;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Property;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -74,10 +76,18 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	public List<Employee> searchBySkills(String skill) {
 
-	    TypedQuery<Employee> query = sessionFactory.getCurrentSession().createQuery("from Employee e join EmployeeSkill es join Skill s "
-                + "where s.skill_name LIKE concat('%', :skill, '%')");
-        query.setParameter("skill", skill);
-        return query.getResultList();
+	    List<Employee> listOfEmployee = new ArrayList<Employee>();
+        Criteria c = sessionFactory.getCurrentSession().createCriteria(EmployeeSkills.class, "employee");
+        c.createAlias("employee.skillCode", "skill");
+        c.add(Restrictions.like("skill.name", skill + "%"));
+
+        for(Object empSkill: c.list())
+        {
+            EmployeeSkills es = (EmployeeSkills) empSkill;
+            listOfEmployee.add(es.getEmployeeCode());
+        }
+        return listOfEmployee;
+	    
 	}
 
 
@@ -94,10 +104,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             listOfEmployee.add(j.getEmployeeCode());
         }
         return listOfEmployee;
-//	    TypedQuery<Employee> query = sessionFactory.getCurrentSession().createQuery("from Employee e join JobDetails j "
-//                + "where j.totalExperience = :experience");
-//        query.setParameter("experience", experience);
-//        return query.getResultList();
 	}
 
 

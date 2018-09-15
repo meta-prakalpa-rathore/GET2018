@@ -59,10 +59,27 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employee.setGender(preSignupTO.getGender());
 		
 		JobDetails jobDetails = new JobDetails();
-		jobDetails.setReportingMgr(employeeDao.getEmployeeByCode(preSignupTO.getReportingMgr()));
-		jobDetails.setTeamLead(employeeDao.getEmployeeByCode(preSignupTO.getTeamLead()));
+		String reportingMgr = preSignupTO.getReportingMgr();
+		String teamLead = preSignupTO.getTeamLead();
+		Integer projectId = preSignupTO.getProjectId();
+		
+		if(reportingMgr != null)
+		    jobDetails.setReportingMgr(employeeDao.getEmployeeByCode(reportingMgr));
+		else
+		    jobDetails.setReportingMgr(null);
+		
+		if(teamLead != null)
+		    jobDetails.setTeamLead(employeeDao.getEmployeeByCode(teamLead));
+		else
+		    jobDetails.setTeamLead(null);
+		
 		jobDetails.setDateOfJoining(preSignupTO.getDoj());
-		jobDetails.setProjectId(projectDao.getProjectById(preSignupTO.getProjectId()));
+		
+		if(projectId != null)
+		    jobDetails.setProjectId(projectDao.getProjectById(projectId));
+		else
+		    jobDetails.setProjectId(null);
+		
 		jobDetails.setEmployeeCode(employee);
         
 		employeeDao.preSignup(employee, jobDetails);

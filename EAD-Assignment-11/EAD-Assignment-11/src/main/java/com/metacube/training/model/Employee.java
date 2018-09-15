@@ -1,14 +1,16 @@
 package com.metacube.training.model;
 
-import java.io.InputStream;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -66,6 +68,11 @@ public class Employee {
     @Column(name = "enabled")
 	private boolean enabled;
 	
+    @ManyToMany(targetEntity = Skill.class, cascade = { CascadeType.ALL })
+    @JoinTable(name = "Employee_skills", 
+                joinColumns = { @JoinColumn(name = "emp_code") }, 
+                inverseJoinColumns = { @JoinColumn(name = "skill_code") })
+    private Set<Skill> skills;
 	
 	/**
 	 * @return the employeeCode
