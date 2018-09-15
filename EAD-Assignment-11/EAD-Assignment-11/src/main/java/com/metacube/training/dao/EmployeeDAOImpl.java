@@ -117,7 +117,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	public boolean updateEmployee(Employee employee) {
 		
-	    TypedQuery<Employee> query = sessionFactory.getCurrentSession().createQuery("UPDATE employee "
+	    TypedQuery<Employee> query = sessionFactory.getCurrentSession().createQuery("UPDATE Employee "
             + "SET firstName = :firstName, middleName = :middleName, lastName = :lastName, email = :email, dob = :dob, gender = :gender, "
             + "primaryContact = :primaryContact, secondaryContact = :secondaryContact, skypeId = :skypeId, enabled = :enabled, password = :password "
             + "WHERE employeeCode = :employeeCode");

@@ -27,13 +27,13 @@
 			</tr>
 			<tr>
 				<td>Gender:</td>
-				<td><input type="radio" name="gender" value="m"> Male</td>
-  				<td><input type="radio" name="gender" value="f"> Female</td>
-  				<td><input type="radio" name="gender" value="o"> Other</td>
+				<td><input type="radio" name="gender" value="m" th:checked="${employee.gender} == 'm'"> Male</td>
+  				<td><input type="radio" name="gender" value="f" th:checked="${employee.gender} == 'f'"> Female</td>
+  				<td><input type="radio" name="gender" value="o" th:checked="${employee.gender} == 'o'"> Other</td>
 			</tr>
 			<tr>
 				<td>Date of Birth :</td>
-				<td><input type="date" name="dob" th:value="${employee.dob}"></td>
+				<td><input type="date" name="dob" th:value="${#dates.format(employee.dob, 'yyyy-MM-dd')}"></td>
 			</tr>
 			<tr>
 				<td>Email :</td>
