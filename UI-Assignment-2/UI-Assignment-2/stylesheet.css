@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+}
+
+@font-face {
+	font-family: Ubuntu-Bold;
+	src: url(fonts/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+	font-family: Ubuntu-Regular;
+	src: url(fonts/Ubuntu-Regular.ttf);
+}
+
+.container {
+    background-image: url(images/homebg.png);
+    background-size: cover;
+}
+
+.header {
+    width: 100%;
+    display: inline-block;
+}
+
+.logo {
+    width: 33%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.menu {
+    width: 33%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.social-icons {
+    width: 33%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.menu ul, .social-icons ul {
+    list-style-type: none;
+}
+
+.menu li, .social-icons li {
+    display: inline;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-family: Ubuntu-Bold;
+    padding: 0px 10px;
+    font-size: 12px;
+}
+
+.social-icons img {
+    width: 20px;
+    padding: 0px 10px;
+    margin-top: 10px;
+}
+
+.cover-text {
+    display: inline-block;
+    width: 49%;
+    box-sizing: border-box;
+    padding: 100px 100px 100px 150px;
+    vertical-align: top;
+    
+}
+
+.cover-image {
+    display: inline-block;
+    width: 49%;
+    box-sizing: border-box;
+    padding: 100px 10px;
+}
+
+.cover-image img {
+    width: 70%;
+}
+
+.cover-text h1 {
+    font-size: 40px;
+    color: white;
+    font-family: Ubuntu-Bold;
+}
+
+.cover-text a {
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    font-family: Verdana;
+    line-height: 150px;
+    border-radius: 3px;
+    margin: 0px 7px 0px 0px;
+}
+
+#download-btn {
+    background-color: #FC6A45;
+}
+
+#features-btn {
+    background-color: #4563C5;
+}
+
+.heading h1 {
+    color: #7395fb;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 100px;
+    font-family: Ubuntu-Bold;
+}
+
+.heading p {
+    color: #b2b2ba;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+    font-family: Ubuntu-Regular;
+}
+
+.features {
+    padding-left: 100px;    
+}
+
+.feature {
+    width: 33%;
+    display: inline-block;
+    margin-top: 130px;
+}
+
+.feature-image {
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+}
+
+.feature-text {
+    width: 60%;
+    display: inline-block;
+}
+
+.feature-text h2 {
+    font-family: Ubuntu-Bold;
+}
+
+.feature-text p {
+    font-family: Ubuntu-Regular;
+    color: #b2b2ba;
+    margin-top: 10px;
+}
+
+.weather-report img {
+    display: block;
+    margin: 100px auto;
+    height: 60%;
+}
+
+.screenshot {
+    margin-left: 250px;
+    margin-top: 100px;
+}
+
+.screenshot-image {
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    height: 50%
+}
+
+.screenshot-text {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    margin-top: 100px;
+    margin-right: 100px;
+}
+
+.screenshot-text h2 {
+    padding: 35px 0px 20px;
+    font-family: Ubuntu-Bold;
+    font-size: 30px;
+}
+
+.screenshot-text p {
+    font-family: Ubuntu-Regular;
+    color: #b2b2ba;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.review {
+    margin-top: 100px;
+    margin-left: 100px;
+    display: inline-block;
+    width: 40%;
+}
+
+.review p {
+    font-family: Ubuntu-Bold;
+    font-size: 23px;
+    padding: 20px;
+}
+
+.review span {
+    font-family: Ubuntu-Regular;
+    font-size: 15px;
+    padding-left: 20px;
+}
+
+.download {
+    margin-top: 100px;
+    background-color: #6388fb;
+}
+
+.download-text {
+    color: white;
+    margin: 100px;
+    display: inline-block;
+    width: 40%
+}
+
+.download-text h1 {
+    font-family: Ubuntu-Bold;
+    padding: 20px 20px 0px 20px;
+    font-size: 35px;
+}
+
+.download-text p {
+    font-family: Ubuntu-Regular;
+    font-size: 20px;
+    padding: 20px 20px 0px 20px;
+}
+
+.download-apps img {
+    line-height: 150px;
+    border-radius: 3px;
+    margin: 50px 0px 0px 18px;
+}
+
+.download-image {
+    width: 40%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.download-image img {
+    width: 100%;
+    display: block;
+}
+
+.footer {
+    background-color: #383a53;
+    padding: 20px 0px;
+}
+
+.rights {
+    color: #b2b2ba;
+    font-family: Ubuntu-Regular;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 100px;
+}
