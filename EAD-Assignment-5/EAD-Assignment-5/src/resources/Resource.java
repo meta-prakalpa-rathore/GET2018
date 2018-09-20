@@ -71,7 +71,7 @@ public class Resource {
     @Path("/categories")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getCategories(@HeaderParam("Authorization") String authorization)
+    public String getCategories(@HeaderParam("Authorization") String authorization)
     {
         int status;
         String message;
@@ -90,7 +90,7 @@ public class Resource {
             data = dao.getCategories();
         }
         
-        return new Response(status, message, gson.toJsonTree(data));
+        return gson.toJson(new Response(status, message, data));
     }
     
     
@@ -141,7 +141,7 @@ public class Resource {
     @Path("/advertisements")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllAdvertisements(@HeaderParam("Authorization") String authorization)
+    public String getAllAdvertisements(@HeaderParam("Authorization") String authorization)
     {
         int status;
         String message;
@@ -160,7 +160,7 @@ public class Resource {
             data = dao.getAdvertisements();
         }
         
-        return new Response(status, message, gson.toJsonTree(data));
+        return gson.toJson(new Response(status, message, data));
     }
     
     
@@ -172,7 +172,7 @@ public class Resource {
     @Path("/categories/{id}/advertisements")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAdvertisementsByCategoryId(@HeaderParam("Authorization") String authorization, @PathParam("id") int categoryId)
+    public String getAdvertisementsByCategoryId(@HeaderParam("Authorization") String authorization, @PathParam("id") int categoryId)
     {        
         int status;
         String message;
@@ -197,7 +197,7 @@ public class Resource {
             data = dao.getAdvertisementsByCategory(categoryId);
         }
         
-        return new Response(status, message, gson.toJsonTree(data));
+        return gson.toJson(new Response(status, message, data));
     }
     
     
