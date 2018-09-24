@@ -7,23 +7,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 
-//	@RequestMapping(value="/", method = RequestMethod.GET)
-//	public String test() {
-//		return "login";
-//	}
+	@RequestMapping(value="/", method = RequestMethod.GET)
+	public String welcome() {
+		return "login";
+	}
 	
 	@RequestMapping(value="/home**", method = RequestMethod.GET)
-    public String login() {
+    public String home() {
         return "home";
     }
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
-    public String login1() {
+    public String login() {
         return "login";
     }
 	
 	@RequestMapping(value="/failure", method = RequestMethod.GET)
-    public String login2() {
+    public String failure() {
         return "failure";
+    }
+	
+	@RequestMapping(value="/logout", method = RequestMethod.GET)
+    public String logout() {
+        return "login";
     }
 }
