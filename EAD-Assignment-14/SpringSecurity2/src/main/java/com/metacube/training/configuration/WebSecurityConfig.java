@@ -45,12 +45,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .successHandler(myAuthenticationSuccessHandler())
 	        .usernameParameter("username")
 	        .passwordParameter("password")
-	        .failureUrl("/error")
+	        .failureUrl("/401")
         .and()
 			.logout().logoutSuccessUrl("/login")
 			.logoutUrl("/Logout")
 		.and()
-            .exceptionHandling().accessDeniedPage("/error")
+            .exceptionHandling().accessDeniedPage("/403")
 		.and()
 			.csrf();
     	

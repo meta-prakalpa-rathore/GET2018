@@ -1,5 +1,8 @@
 package com.metacube.training.provider;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -9,18 +12,15 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import com.metacube.training.model.User;
+import com.metacube.training.model.UserTO;
 import com.metacube.training.service.UserService;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 	
 	@Autowired
 	private UserService userService;
 	
-    private static List<User> users;
+    private static List<UserTO> users;
 
     public CustomAuthenticationProvider() {
         users = userService.getAllUsers();
@@ -37,9 +37,9 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         }
         String password = credentials.toString();
 
-        User userOptional =  null ;
+        UserTO userOptional =  null ;
         
-        for (User user : users) {
+        for (UserTO user : users) {
 			if(user.match(name, password)) {
 				userOptional = user;
 			}
