@@ -17,9 +17,14 @@ public class LoginController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "/error" , method = RequestMethod.GET)
-	public String errorPage(){
-		return "error";
+	@RequestMapping(value = "/401" , method = RequestMethod.GET)
+	public String errorPage401() {
+		return "401";
 	}
+	
+	@RequestMapping(value = "/403" , method = RequestMethod.GET)
+    public String errorPage403() {
+        return "403";
+    }
 
 }
