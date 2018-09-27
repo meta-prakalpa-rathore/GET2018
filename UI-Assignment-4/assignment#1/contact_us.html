@@ -1,0 +1,196 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>
+            Contact Us
+        </title>
+        <link href="stylesheet.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    
+    <body>
+        <h1>Contact Us Today!</h1>
+        <div id="form-container">
+            <form>
+                <div class="form-element">
+                    <div class="input-label">
+                        First name
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="fname" placeholder="First Name" minlength="2" pattern="[a-zA-Z\s]*" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        Last Name
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="lname" placeholder="Last Name" pattern="[a-zA-Z]*">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        E-Mail
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" name="email" placeholder="E-Mail Address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        Phone #
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="tel" name="phone" placeholder="(845)555-1212" pattern="[0-9]*" minlength="8" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        Address
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="address" placeholder="Address" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        City
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="city" placeholder="City" pattern="[a-zA-z]*" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        State
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-list"></i>
+                        </div>
+                        <div class="input-field">
+                            <select name="state">
+                                <option selected="true" disabled="disabled">Please select your state</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        Zip Code
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="zipcode" placeholder="Zip Code" pattern="[0-9]*" minlength="5" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        Website or domain name
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="url" name="website" placeholder="Website or domain name">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        Do you have hosting?
+                    </div>
+                    <div class="input-group">
+                        <div class="input-radio-field">
+                            <label class="radio-label">    
+                                <input type="radio" name="has_hosting" value="true"> Yes
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="has_hosting" value="false"> No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        Project Description
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+                        <div class="input-field">
+                            <textarea name="project_description" rows="3" placeholder="Project Description" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                        </div>
+                        <div class="input-field">
+                            <button id="btn">Send
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </body>
+</html>
