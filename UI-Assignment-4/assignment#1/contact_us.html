@@ -105,8 +105,8 @@
                             <i class="fa fa-list"></i>
                         </div>
                         <div class="input-field">
-                            <select name="state">
-                                <option selected="true" disabled="disabled">Please select your state</option>
+                            <select name="state" required>
+                                <option selected="true" disabled="disabled" value="">Please select your state</option>
                                 <option value="Delhi">Delhi</option>
                                 <option value="Haryana">Haryana</option>
                                 <option value="Madhya Pradesh">Madhya Pradesh</option>
@@ -126,7 +126,7 @@
                             <i class="fa fa-home"></i>
                         </div>
                         <div class="input-field">
-                            <input type="text" name="zipcode" placeholder="Zip Code" pattern="[0-9]*" minlength="5" required>
+                            <input type="text" name="zipcode" placeholder="Zip Code" minlength="5" required>
                         </div>
                     </div>
                 </div>
@@ -152,10 +152,10 @@
                     <div class="input-group">
                         <div class="input-radio-field">
                             <label class="radio-label">    
-                                <input type="radio" name="has_hosting" value="true"> Yes
+                                <input type="radio" name="has_hosting" value="true" required> Yes
                             </label>
                             <label class="radio-label">
-                                <input type="radio" name="has_hosting" value="false"> No
+                                <input type="radio" name="has_hosting" value="false" required> No
                             </label>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
                         <div class="icon">
                         </div>
                         <div class="input-field">
-                            <button id="btn">Send
+                            <button id="submit-btn">Send
                                 <i class="fa fa-paper-plane"></i>
                             </button>
                         </div>

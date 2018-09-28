@@ -70,7 +70,7 @@ input[type='radio'] {
     margin: 12px 60px; 
 }
 
-#btn {
+#submit-btn {
     background-color: #EC9832;
     width: 60px;
     border-radius: 3px;
