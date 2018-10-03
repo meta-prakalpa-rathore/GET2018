@@ -17,10 +17,15 @@ header {
 
 nav {
     padding: 15px 0px;
+    overflow: scroll;
 }
 
 h1, h2, h3 {
     font-family: "Playfair Display";
+}
+
+.jumbotron h1 {
+    font-size: 3rem;
 }
 
 .jumbotron p {
@@ -32,7 +37,7 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-#pagination-btn {
+.pagination-btn {
     border-radius: 30px;
 }
 
