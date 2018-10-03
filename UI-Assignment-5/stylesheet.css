@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+}
+
+header {
+    line-height: 1;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 0px;
+}
+
+#logo {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Playfair Display";
+    text-decoration: none;
+}
+
+nav {
+    padding: 15px 0px;
+}
+
+h1, h2, h3 {
+    font-family: "Playfair Display";
+}
+
+.jumbotron p {
+    font-size: 20px;
+}
+
+.jumbotron a {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#pagination-btn {
+    border-radius: 30px;
+}
+
+footer {
+    border-top: 1px solid #e5e5e5;
+}
