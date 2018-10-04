@@ -13,7 +13,7 @@
     <body>
         <h1>Contact Us Today!</h1>
         <div id="form-container">
-            <form id="contactForm" action="details.html" onsubmit="return submitForm();">
+            <form id="contactForm" method="post" action="details.html" onsubmit="return submitForm();">
                 <div class="form-element">
                     <div class="input-label">
                         First name<span>*</span>
@@ -112,7 +112,7 @@
                             <i class="fa fa-list"></i>
                         </div>
                         <div class="input-field">
-                            <select id="state" onblur="stateValidate()" onchange="stateChange()">
+                            <select id="state" onblur="stateValidate()" onchange="handleStateChange()">
                                 <option selected="true" disabled="disabled" value="">Please select your state</option>
                                 <option value="Haryana">Haryana</option>
                                 <option value="Maharashtra">Maharashtra</option>
