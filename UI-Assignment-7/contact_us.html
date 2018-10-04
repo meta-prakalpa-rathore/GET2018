@@ -1,0 +1,144 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>
+            Contact Us
+        </title>
+        <link href="stylesheet.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="validation.js"></script>
+    </head>
+    
+    <body>
+        <h1>Contact Us Today!</h1>
+        <div id="form-container">
+            <form id="contactForm" action="details.html" onsubmit="return submitForm();">
+                <div class="form-element">
+                    <div class="input-label">
+                        First name<span>*</span>
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="fname" placeholder="First Name" onblur="firstNameValidate()">
+                            <p id="fnameErr"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        Last Name<span>*</span>
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="lname" placeholder="Last Name" onblur="lastNameValidate()">
+                            <p id="lnameErr"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        E-Mail<span>*</span>
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="email" placeholder="E-Mail Address" onblur="emailValidate()">
+                            <p id="emailErr"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        Phone #
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="phone" placeholder="(845)555-1212" onblur="phoneValidate()">
+                            <p id="phoneErr"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        Address
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="address" placeholder="Address">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        City
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="city" placeholder="City" onblur="cityValidate()">
+                            <p id="cityErr"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        State<span>*</span>
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                            <i class="fa fa-list"></i>
+                        </div>
+                        <div class="input-field">
+                            <select id="state" onblur="stateValidate()" onchange="stateChange()">
+                                <option selected="true" disabled="disabled" value="">Please select your state</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                            </select>
+                            <p id="stateErr"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-element">
+                    <div class="input-label">
+                        
+                    </div>
+                    <div class="input-group">
+                        <div class="icon">
+                        </div>
+                        <div class="input-field">
+                            <button id="submit-btn" type="submit">Send
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </body>
+</html>
