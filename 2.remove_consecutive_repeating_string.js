@@ -16,6 +16,8 @@ function removeConsecutiveRepeatingString(inputString) {
         }
 
         i++;
+        if(i < 0)
+            i = 0;
     }
     
     return inputString;
