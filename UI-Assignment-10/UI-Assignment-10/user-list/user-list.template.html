@@ -1,0 +1,61 @@
+<header>
+    <h1 class="text-center">User Management</h1>
+</header>
+
+<div class="container-fluid">
+    <div class="row justify-content-between align-items-center p-5">
+        <h1>Users</h1>
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addUserModal" ng-click="setUser(null)">Add User</button>
+    </div>
+    <div class="row justify-content-between align-items-center p-5">
+        <input id="searchKeyword" placeholder="Search Users by Name..." class="col-10">
+        <button class="col-2" ng-click="searchUser()">Search</button>
+    </div>
+    <div class="row p-5"> 
+      <ul class="d-flex list-unstyled flex-wrap">
+        <li ng-repeat="user in $ctrl.users | filter:$ctrl.query" class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card d-flex flex-row m-2 border-dark">
+                <img class="card-img-left d-none d-lg-block align-self-center" ng-src="{{user.picture}}" alt="{{user.name}}">
+                <div class="card-body d-flex flex-column col-md-8 col-sm-12">
+                    <div class="d-flex flex-row justify-content-between">
+                        <span>{{user.name}}</span>
+                        <a data-toggle="modal" data-target="#addUserModal" ng-click="setUser($index)"><i class="fa fa-pencil-square fa-2x"></i></a>
+                    </div>
+                    <p><i class="fa fa-phone"></i>  {{user.phone}}</p>
+                    <p><i class="fa fa-map-marker"></i>  {{user.address}}</p>
+                </div>
+            </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="modal" id="addUserModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add User</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <p>Name</p>
+            <input id="name" placeholder="Enter user name" ng-model="$ctrl.user.name">
+            <p>Contact No</p>
+            <input id="name" placeholder="Enter contact no" ng-model="$ctrl.user.phone">
+            <p>Address</p>
+            <input id="name" placeholder="Enter address" ng-model="$ctrl.user.address">
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">CANCEL</button>
+            <button type="button" class="btn btn-primary" ng-click="addUser()" data-dismiss="modal">Save</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
