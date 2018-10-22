@@ -1,0 +1,32 @@
+<div class="container-fluid" ng-init="changeActive()">
+    <div class="row">
+        <aside class="col-md-3 px-0 py-5" style="width:18rem;">
+            <div class="list-group">
+                <button class="list-group-item list-group-item-action active" ng-click="SearchList=all" data-toggle="list" role="tab">All categories</button>
+                <button class="list-group-item list-group-item-action" ng-click="SearchList={category:'Bread'}" data-toggle="list" role="tab">Bread</button>
+                <button class="list-group-item list-group-item-action" ng-click="SearchList={category:'Dairy'}" data-toggle="list" role="tab">Dairy</button>
+                <button class="list-group-item list-group-item-action" ng-click="SearchList={category:'Fruits'}" data-toggle="list" role="tab">Fruits</button>
+                <button class="list-group-item list-group-item-action" ng-click="SearchList={category:'Seasonings and Spice'}" data-toggle="list" role="tab">Seasonings and Spices</button>
+                <button class="list-group-item list-group-item-action" ng-click="SearchList={category:'Vegetables'}" data-toggle="list" role="tab">Vegetables</button>
+            </div>
+        </aside>
+        <div class="col-md-9 p-5">
+            <ul class="d-flex list-unstyled flex-wrap">
+                <li ng-repeat="item in $ctrl.items | filter:SearchList" class="col-lg-6 col-md-12">
+                    <div class="card d-flex flex-column m-2 border-dark">
+                        <img class="card-img d-lg-block align-self-center" ng-src="{{item.imagePath}}" alt="{{item.name}}">
+                        <h2 class="p-2">{{item.name}}</h2>
+                        <p class="px-2">&#x20b9; {{item.price}}</p>
+                        <div ng-if="item.count > 0" class="row m-0 border align-items-center">
+                            <button class="btn btn-secondary col-2" ng-click="$root.removeItemFromCart(item)">-</button>
+                            <span class="col-8 text-center">{{item.count}} in cart</span>
+                            <button class="btn btn-secondary col-2" ng-click="$root.addItemToCart(item)">+</button>
+                        </div>
+                        <button ng-if="item.count == 0" class="p-2 btn btn-secondary" ng-click="$root.addItemToCart(item)">ADD TO CART</button>
+                        
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

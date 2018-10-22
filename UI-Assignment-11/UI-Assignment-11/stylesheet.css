@@ -1,0 +1,50 @@
+a, a:active, a:hover {
+    text-decoration: none;
+}
+
+header, .modal-header {
+    border-bottom: 1px solid lightgrey;
+}
+
+ul {
+    width: 100%;
+}
+
+#search-keyword {
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.error {
+    color: red;
+    font-size: 10px;
+}
+
+.modal-body input{
+    width: 400px;
+}
+
+#input-address {
+    height: 50px;
+    overflow: auto;
+}
+
+.user {
+    text-align: right;
+}
+
+.card-img {
+    height: 200px;
+    width: auto;
+}
+
+.img-thumbnail {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.card-footer a{
+    text-decoration: none;
+    color: white;
+}

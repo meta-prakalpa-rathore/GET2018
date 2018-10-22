@@ -1,0 +1,42 @@
+<div class="container-fluid mt-4">
+    <h1>Shopping Cart</h1>
+    <div class="card col-10 p-0">
+        <div class="card-body px-0">
+            <div class="row justify-content-between pb-3 px-4">
+                <div>You have {{$root.cartCount}} items in your shopping cart.</div>
+                <div>Clear Shopping Cart</div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Product</th>
+                        <th colspan="2" scope="colgroup"></th>
+                        <th class="text-center" scope="col">Quantity</th>
+                        <th colspan="2" scope="colgroup"></th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in $ctrl.cartItems">
+                        <td><img class="img-thumbnail" ng-src="{{item.imagePath}}" alt="{{item.name}}"></td>
+                        <td>{{item.name}}</td>
+                        <td></td>
+                        <td class="text-center"><button class="btn btn-secondary" ng-click="$root.removeItemFromCart(item)">-</button></td>
+                        <td class="text-center">{{item.count}} in cart</td>
+                        <td class="text-center"><button class="btn btn-secondary" ng-click="$root.addItemToCart(item)">+</button></td>
+                        <td></td>
+                        <td>&#x20b9; {{item.price}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"></td>
+                        <th>&#x20b9; {{$root.cartTotal}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-primary" href="#!/check-out">Check Out</a>
+        </div>
+    </div>
+</div>
