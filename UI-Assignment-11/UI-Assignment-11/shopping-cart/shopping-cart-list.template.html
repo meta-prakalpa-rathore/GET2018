@@ -22,15 +22,15 @@
                         <td><img class="img-thumbnail" ng-src="{{item.imagePath}}" alt="{{item.name}}"></td>
                         <td>{{item.name}}</td>
                         <td></td>
-                        <td class="text-center"><button class="btn btn-secondary" ng-click="$root.removeItemFromCart(item)">-</button></td>
+                        <td class="text-center"><button class="btn btn-secondary" ng-click="removeItemFromCart(item)">-</button></td>
                         <td class="text-center">{{item.count}} in cart</td>
-                        <td class="text-center"><button class="btn btn-secondary" ng-click="$root.addItemToCart(item)">+</button></td>
+                        <td class="text-center"><button class="btn btn-secondary" ng-click="addItemToCart(item)">+</button></td>
                         <td></td>
                         <td>&#x20b9; {{item.price}}</td>
                     </tr>
                     <tr>
                         <td colspan="7"></td>
-                        <th>&#x20b9; {{$root.cartTotal}}</th>
+                        <th>&#x20b9; {{$ctrl.cartTotal}}</th>
                     </tr>
                 </tbody>
             </table>

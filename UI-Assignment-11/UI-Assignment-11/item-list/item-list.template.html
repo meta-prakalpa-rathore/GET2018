@@ -18,11 +18,11 @@
                         <h2 class="p-2">{{item.name}}</h2>
                         <p class="px-2">&#x20b9; {{item.price}}</p>
                         <div ng-if="item.count > 0" class="row m-0 border align-items-center">
-                            <button class="btn btn-secondary col-2" ng-click="$root.removeItemFromCart(item)">-</button>
+                            <button class="btn btn-secondary col-2" ng-click="removeItemFromCart(item)">-</button>
                             <span class="col-8 text-center">{{item.count}} in cart</span>
-                            <button class="btn btn-secondary col-2" ng-click="$root.addItemToCart(item)">+</button>
+                            <button class="btn btn-secondary col-2" ng-click="addItemToCart(item)">+</button>
                         </div>
-                        <button ng-if="item.count == 0" class="p-2 btn btn-secondary" ng-click="$root.addItemToCart(item)">ADD TO CART</button>
+                        <button ng-if="item.count == 0" class="p-2 btn btn-secondary" ng-click="addItemToCart(item)">ADD TO CART</button>
                         
                     </div>
                 </li>
