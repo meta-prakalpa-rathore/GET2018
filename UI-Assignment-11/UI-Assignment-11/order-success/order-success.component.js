@@ -4,7 +4,6 @@ component('orderSuccess', {
     templateUrl: 'order-success/order-success.template.html',
     controller: ['$http', '$scope', '$rootScope', function OrderSuccessController($http, $scope, $rootScope) {
         var self = this;
-        $rootScope.cartTotal = 0;
         $rootScope.cartCount = 0;
 
         var objToday = new Date(),
