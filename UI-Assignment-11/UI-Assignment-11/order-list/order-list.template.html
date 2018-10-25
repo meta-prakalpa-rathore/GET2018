@@ -10,7 +10,7 @@
     <tbody>
         <tr ng-repeat="order in $ctrl.orders">
             <td>{{order.customerName}}</td>
-            <td>{{order.date}}</td>
+            <td>{{order.date | date: 'MMM dd, yyyy'}}</td>
             <td><a href="#">View</a></td>
         </tr>
     </tbody>

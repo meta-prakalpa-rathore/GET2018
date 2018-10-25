@@ -7,7 +7,7 @@
       "description": "sample description",
       "imagePath": "images/apple.jpg",
       "category": "Fruits",
-      "count": 1
+      "count": 0
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
       "description": "sample description",
       "imagePath": "images/banana.jpg",
       "category": "Fruits",
-      "count": 1
+      "count": 0
     },
     {
       "id": "3",
@@ -217,22 +217,7 @@
       "count": 0
     }
   ],
-  "cart": [
-    {
-      "id": "1",
-      "name": "Apple",
-      "price": 80,
-      "imagePath": "images/apple.jpg",
-      "count": 1
-    },
-    {
-      "id": "2",
-      "name": "Banana",
-      "price": 40,
-      "imagePath": "images/banana.jpg",
-      "count": 1
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "customerName": "Prakalpa Rathore",
@@ -292,6 +277,10 @@
       "customerName": "hftyd",
       "date": "2018-10-25T13:12:39.801Z",
       "id": 13
+    },
+    {
+      "date": "2018-10-25T13:32:46.524Z",
+      "id": 14
     }
   ]
 }
