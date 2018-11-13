@@ -1,0 +1,58 @@
+[
+  {
+    "picture": "images/user-image.png",
+    "name": "Becker Rocha",
+    "gender": "male",
+    "email": "beckerrocha@xplor.com",
+    "phone": "+1 (831) 415-3965",
+    "address": "174 Maple Street, Yonah, California, 2088"
+  },
+  {
+    "picture": "images/user-image.png",
+    "name": "Helen Cooley",
+    "gender": "female",
+    "email": "helencooley@xplor.com",
+    "phone": "+1 (986) 411-3208",
+    "address": "382 Walker Court, Whipholt, Utah, 9258"
+  },
+  {
+    "picture": "images/user-image.png",
+    "name": "Mitzi Little",
+    "gender": "female",
+    "email": "mitzilittle@xplor.com",
+    "phone": "+1 (998) 441-2084",
+    "address": "480 Cranberry Street, Lloyd, Vermont, 1978"
+  },
+  {
+    "picture": "images/user-image.png",
+    "name": "Mclean Deleon",
+    "gender": "male",
+    "email": "mcleandeleon@xplor.com",
+    "phone": "+1 (880) 483-3981",
+    "address": "456 Ocean Parkway, Taft, Wyoming, 8979"
+  },
+  {
+    "picture": "images/user-image.png",
+    "name": "Delgado Macdonald",
+    "gender": "male",
+    "email": "delgadomacdonald@xplor.com",
+    "phone": "+1 (818) 440-3594",
+    "address": "462 Huntington Street, Cashtown, Hawaii, 1224"
+  },
+  {
+    "picture": "images/user-image.png",
+    "name": "Key Mills",
+    "gender": "male",
+    "email": "keymills@xplor.com",
+    "phone": "+1 (874) 591-3592",
+    "address": "264 Roosevelt Court, Malo, Nevada, 1053"
+  },
+  {
+    "picture": "images/user-image.png",
+    "name": "Everett Allison",
+    "gender": "male",
+    "email": "everettallison@xplor.com",
+    "phone": "+1 (806) 450-2390",
+    "address": "454 Bijou Avenue, Carbonville, Maryland, 4761"
+  }
+]

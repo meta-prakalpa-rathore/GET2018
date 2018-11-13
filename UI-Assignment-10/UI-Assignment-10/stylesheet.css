@@ -1,0 +1,31 @@
+header, .modal-header {
+    background-color: #9eeff7;
+    border: 1px solid blue;
+}
+
+.card img {
+    height: 80px;
+}
+
+ul {
+    width: 100%;
+}
+
+#search-keyword {
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.error {
+    color: red;
+    font-size: 10px;
+}
+
+.modal-body input{
+    width: 400px;
+}
+
+#input-address {
+    height: 50px;
+    overflow: auto;
+}
