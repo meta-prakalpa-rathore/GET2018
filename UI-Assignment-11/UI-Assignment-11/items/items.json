@@ -1,0 +1,297 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "price": 80,
+      "description": "sample description",
+      "imagePath": "images/apple.jpg",
+      "category": "Fruits",
+      "count": 1
+    },
+    {
+      "id": "2",
+      "name": "Banana",
+      "price": 40,
+      "description": "sample description",
+      "imagePath": "images/banana.jpg",
+      "category": "Fruits",
+      "count": 1
+    },
+    {
+      "id": "3",
+      "name": "Banana Bread",
+      "price": 190,
+      "description": "sample description",
+      "imagePath": "images/Banana_Bread.jpg",
+      "category": "Bread",
+      "count": 0
+    },
+    {
+      "id": "4",
+      "name": "Basil",
+      "price": 300,
+      "description": "sample description",
+      "imagePath": "images/basil.jpg",
+      "category": "Seasonings and Spices",
+      "count": 0
+    },
+    {
+      "id": "5",
+      "name": "Bay Leaves",
+      "price": 450,
+      "description": "sample description",
+      "imagePath": "images/bay_leaves.jpg",
+      "category": "Seasonings and Spices",
+      "count": 0
+    },
+    {
+      "id": "6",
+      "name": "Breadstick",
+      "price": 80,
+      "description": "sample description",
+      "imagePath": "images/breadstick.jpeg",
+      "category": "Bread",
+      "count": 0
+    },
+    {
+      "id": "7",
+      "name": "Brown Bread",
+      "price": 100,
+      "description": "sample description",
+      "imagePath": "images/brown_bread.jpg",
+      "category": "Bread",
+      "count": 0
+    },
+    {
+      "id": "8",
+      "name": "Bun",
+      "price": 80,
+      "description": "sample description",
+      "imagePath": "images/bun.jpg",
+      "category": "Bread",
+      "count": 0
+    },
+    {
+      "id": "9",
+      "name": "Butter",
+      "price": 50,
+      "description": "sample description",
+      "imagePath": "images/butter.jpg",
+      "category": "Dairy",
+      "count": 0
+    },
+    {
+      "id": "10",
+      "name": "Cardamon",
+      "price": 200,
+      "description": "sample description",
+      "imagePath": "images/cardamon.jpg",
+      "category": "Seasonings and Spices",
+      "count": 0
+    },
+    {
+      "id": "11",
+      "name": "Cheese",
+      "price": 80,
+      "description": "sample description",
+      "imagePath": "images/cheese.jpg",
+      "category": "Dairy",
+      "count": 0
+    },
+    {
+      "id": "12",
+      "name": "Clove",
+      "price": 90,
+      "description": "sample description",
+      "imagePath": "images/clove.jpg",
+      "category": "Seasonings and Spices",
+      "count": 0
+    },
+    {
+      "id": "13",
+      "name": "Fennel",
+      "price": 150,
+      "description": "sample description",
+      "imagePath": "images/fennel.jpg",
+      "category": "Seasonings and Spices",
+      "count": 0
+    },
+    {
+      "id": "14",
+      "name": "Green Peas",
+      "price": 60,
+      "description": "sample description",
+      "imagePath": "images/green_peas.jpg",
+      "category": "Vegetables",
+      "count": 0
+    },
+    {
+      "id": "15",
+      "name": "Mango",
+      "price": 80,
+      "description": "sample description",
+      "imagePath": "images/mango.jpg",
+      "category": "Fruits",
+      "count": 0
+    },
+    {
+      "id": "16",
+      "name": "Milk",
+      "price": 50,
+      "description": "sample description",
+      "imagePath": "images/milk.jpg",
+      "category": "Dairy",
+      "count": 0
+    },
+    {
+      "id": "17",
+      "name": "Onion",
+      "price": 40,
+      "description": "sample description",
+      "imagePath": "images/onion.jpg",
+      "category": "Vegetables",
+      "count": 0
+    },
+    {
+      "id": "18",
+      "name": "Orange",
+      "price": 60,
+      "description": "sample description",
+      "imagePath": "images/orange.jpg",
+      "category": "Fruits",
+      "count": 0
+    },
+    {
+      "id": "19",
+      "name": "Pineapple",
+      "price": 100,
+      "description": "sample description",
+      "imagePath": "images/pineapple.jpg",
+      "category": "Fruits",
+      "count": 0
+    },
+    {
+      "id": "20",
+      "name": "Potato",
+      "price": 30,
+      "description": "sample description",
+      "imagePath": "images/potato.jpg",
+      "category": "Vegetables",
+      "count": 0
+    },
+    {
+      "id": "21",
+      "name": "Spinach",
+      "price": 50,
+      "description": "sample description",
+      "imagePath": "images/spinach.jpg",
+      "category": "Vegetables",
+      "count": 0
+    },
+    {
+      "id": "22",
+      "name": "Tomato",
+      "price": 50,
+      "description": "sample description",
+      "imagePath": "images/tomato.jpeg",
+      "category": "Vegetables",
+      "count": 0
+    },
+    {
+      "id": "23",
+      "name": "White Bread",
+      "price": 70,
+      "description": "sample description",
+      "imagePath": "images/white_bread.jpg",
+      "category": "Bread",
+      "count": 0
+    },
+    {
+      "id": "24",
+      "name": "Yogurt",
+      "price": 40,
+      "description": "sample description",
+      "imagePath": "images/yogurt.jpg",
+      "category": "Dairy",
+      "count": 0
+    }
+  ],
+  "cart": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "price": 80,
+      "imagePath": "images/apple.jpg",
+      "count": 1
+    },
+    {
+      "id": "2",
+      "name": "Banana",
+      "price": 40,
+      "imagePath": "images/banana.jpg",
+      "count": 1
+    }
+  ],
+  "orders": [
+    {
+      "customerName": "Prakalpa Rathore",
+      "date": "Oct 22, 2018",
+      "id": 1
+    },
+    {
+      "customerName": "Prakalpa",
+      "date": "Oct 22, 2018",
+      "id": 2
+    },
+    {
+      "customerName": "Arjita",
+      "date": "Oct 22, 2018",
+      "id": 3
+    },
+    {
+      "date": "Oct 22, 2018",
+      "id": 4
+    },
+    {
+      "customerName": "gdrg",
+      "date": "Oct 22, 2018",
+      "id": 5
+    },
+    {
+      "date": "Oct 22, 2018",
+      "id": 6
+    },
+    {
+      "customerName": "jguf",
+      "date": "Oct 22, 2018",
+      "id": 7
+    },
+    {
+      "date": "Oct 23, 2018",
+      "id": 8
+    },
+    {
+      "date": "Oct 24, 2018",
+      "id": 9
+    },
+    {
+      "date": "Oct 24, 2018",
+      "id": 10
+    },
+    {
+      "customerName": "Bhavika",
+      "date": "Oct 25, 2018",
+      "id": 11
+    },
+    {
+      "date": "2018-10-25T13:10:38.438Z",
+      "id": 12
+    },
+    {
+      "customerName": "hftyd",
+      "date": "2018-10-25T13:12:39.801Z",
+      "id": 13
+    }
+  ]
+}
